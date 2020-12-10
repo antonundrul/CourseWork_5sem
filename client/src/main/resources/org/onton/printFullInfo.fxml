@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="537.0" prefWidth="600.0" style="-fx-background-image: url(https://i.pinimg.com/originals/63/07/ea/6307ead3fa945bc8e234d2f2e9de628b.jpg); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.onton.PrintFullInfoController">
+    <top>
+        <Label alignment="CENTER" prefHeight="72.0" prefWidth="662.0" text="Введите необходимую информацию" textAlignment="CENTER" BorderPane.alignment="CENTER">
+            <font>
+                <Font size="33.0" />
+            </font>
+        </Label>
+    </top>
+    <center>
+        <VBox alignment="CENTER_RIGHT" prefHeight="324.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="TOP_RIGHT" prefHeight="41.0" prefWidth="600.0" spacing="30.0">
+                    <children>
+                        <Label text="Фамилия">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="lastNameField" />
+                        <Label text="Имя">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="firstNameField" />
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                </HBox>
+                <HBox alignment="TOP_RIGHT" prefHeight="34.0" prefWidth="600.0" spacing="20.0">
+                    <children>
+                        <Label text="Отчество">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="middleNameField" prefHeight="26.0" prefWidth="122.0" />
+                        <Label text="Дата рождения">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                  <TextField />
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                    </padding>
+                </HBox>
+                <HBox alignment="TOP_RIGHT" prefHeight="43.0" prefWidth="600.0" spacing="20.0">
+                    <children>
+                        <Label text="Серия пасспорта">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="passportSeriesField" />
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                    </padding>
+                </HBox>
+                <HBox alignment="TOP_RIGHT" spacing="20.0">
+                    <children>
+                        <Label prefHeight="25.0" prefWidth="162.0" text="Номер пасспорта">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="passportNumberField" />
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                    </padding>
+                </HBox>
+                <HBox alignment="TOP_RIGHT" prefHeight="24.0" prefWidth="600.0" spacing="20.0">
+                    <children>
+                        <Label text="Откуда летим">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="placeOfDepartureField" prefHeight="26.0" prefWidth="122.0" />
+                        <Label text="Куда летим">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="placeOfDestinationField" prefHeight="26.0" prefWidth="134.0" />
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                    </padding>
+                </HBox>
+                <HBox alignment="TOP_RIGHT" spacing="20.0">
+                    <children>
+                        <Label text="Когда летим">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                  <TextField />
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                    </padding>
+                </HBox>
+            </children>
+            <padding>
+                <Insets bottom="10.0" top="10.0" />
+            </padding>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="600.0" spacing="20.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="returnBackButton" mnemonicParsing="false" onAction="#backButtonPressed" prefHeight="44.0" prefWidth="147.0" style="-fx-background-color: none; -fx-border-color: #000000;" text="Назад" textFill="#ec8e28">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+            </padding>
+        </HBox>
+    </bottom>
+</BorderPane>

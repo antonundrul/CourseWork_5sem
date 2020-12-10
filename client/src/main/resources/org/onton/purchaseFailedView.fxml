@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="287.0" prefWidth="523.0" style="-fx-background-image: url(&quot;https://image.freepik.com/free-photo/sky-cloud-clouds-background_121-69383.jpg&quot;); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.onton.PurchaseFailedViewController">
+   <children>
+      <Label layoutX="146.0" layoutY="66.0" text="У вас на счету">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="79.0" layoutY="113.0" text="недостаточно средств">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="167.0" text="для покупки данного билета">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

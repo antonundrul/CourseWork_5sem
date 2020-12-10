@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="644.0" prefWidth="923.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.onton.AdminMenuController">
+   <children>
+      <AnchorPane layoutX="14.0" layoutY="-13.0" prefHeight="56.0" prefWidth="916.0" style="-fx-background-image: url(&quot;https://image.freepik.com/free-photo/sky-cloud-clouds-background_121-69383.jpg&quot;); -fx-background-size: cover;" />
+      <AnchorPane layoutX="-1.0" prefHeight="644.0" prefWidth="158.0" style="-fx-background-image: url(&quot;https://image.freepik.com/free-photo/sky-cloud-clouds-background_121-69383.jpg&quot;); -fx-background-size: cover;">
+         <children>
+            <Button fx:id="homePageButton" cancelButton="true" layoutX="40.0" layoutY="103.0" mnemonicParsing="false" onAction="#handleCliks" prefHeight="39.0" prefWidth="99.0" style="-fx-background-color: none;" text="Главная" textAlignment="RIGHT" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Button>
+            <Button layoutX="43.0" layoutY="598.0" mnemonicParsing="false" onAction="#switchToAuthorization" prefHeight="39.0" prefWidth="99.0" style="-fx-background-color: none;" text="Выйти">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <ImageView fitHeight="110.0" fitWidth="69.0" layoutX="-1.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../administrator.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="52.0" layoutX="3.0" layoutY="253.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../20697.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="36.0" layoutX="3.0" layoutY="103.0" onMouseClicked="#handleCliks" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../home2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="36.0" layoutX="3.0" layoutY="599.0" onMousePressed="#switchToAuthorization" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../back.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="usersPageButton" layoutX="35.0" layoutY="253.0" mnemonicParsing="false" onAction="#handleCliks" prefHeight="39.0" prefWidth="115.0" style="-fx-background-color: none;" text="Пользователи" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button fx:id="flightsPageButton" layoutX="43.0" layoutY="303.0" mnemonicParsing="false" onAction="#handleCliks" prefHeight="39.0" prefWidth="99.0" style="-fx-background-color: none;" text="Рейсы">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="40.0" fitWidth="36.0" layoutX="3.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../68380.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="36.0" layoutX="3.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../0c3b3adb1a7530892e55ef36d3be6cb8.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="profilePageButton" layoutX="40.0" layoutY="153.0" mnemonicParsing="false" onAction="#handleCliks" prefHeight="39.0" prefWidth="99.0" style="-fx-background-color: none;" text="Профиль">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="airportsPageButton" layoutX="40.0" layoutY="203.0" mnemonicParsing="false" onAction="#handleCliks" prefHeight="39.0" prefWidth="99.0" style="-fx-background-color: none;" text="Аэропорты">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="40.0" fitWidth="36.0" layoutX="3.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../89039.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="36.0" layoutX="3.0" layoutY="353.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../44-512.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="ticketsPageButton" layoutX="40.0" layoutY="353.0" mnemonicParsing="false" onAction="#handleCliks" prefHeight="39.0" prefWidth="99.0" style="-fx-background-color: none;" text="Билеты">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="40.0" fitWidth="36.0" layoutX="3.0" layoutY="403.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../statistics.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="statisticsPageButton" layoutX="40.0" layoutY="403.0" mnemonicParsing="false" onAction="#handleCliks" prefHeight="39.0" prefWidth="99.0" style="-fx-background-color: none;" text="Статистика" />
+            <ImageView fitHeight="40.0" fitWidth="36.0" layoutX="3.0" layoutY="453.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../business-report.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="reportButton" layoutX="40.0" layoutY="453.0" mnemonicParsing="false" onAction="#handleCliks" prefHeight="39.0" prefWidth="99.0" style="-fx-background-color: none;" text="Отчеты" />
+         </children>
+      </AnchorPane>
+      <StackPane layoutX="146.0" prefHeight="644.0" prefWidth="783.0">
+         <children>
+            <Pane fx:id="airportsPane" prefHeight="603.0" prefWidth="771.0" style="-fx-background-image: url(&quot;https://image.freepik.com/free-photo/sky-cloud-clouds-background_121-69383.jpg&quot;); -fx-background-size: cover;">
+               <children>
+                  <TableView fx:id="airportTableView" layoutY="42.0" onMouseClicked="#airportTableRowSelected" prefHeight="560.0" prefWidth="783.0">
+                    <columns>
+                      <TableColumn fx:id="idAirportColumn" prefWidth="199.19998168945312" text="Идентификационный номер" />
+                      <TableColumn fx:id="airportNameColumn" prefWidth="367.2000427246094" text="Название аэропорта" />
+                        <TableColumn fx:id="airportCityColumn" prefWidth="214.4000244140625" text="Город" />
+                    </columns>
+                  </TableView>
+                  <Button layoutX="670.0" layoutY="607.0" mnemonicParsing="false" onAction="#switchToAddAirportView" prefHeight="30.0" prefWidth="91.0" style="-fx-background-color: none;" text="Добавить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="removeAirportButton" layoutX="589.0" layoutY="607.0" mnemonicParsing="false" onAction="#removeAirportButtonPressed" prefHeight="30.0" prefWidth="81.0" style="-fx-background-color: none;" text="Удалить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children></Pane>
+            <Pane fx:id="userInformationPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-image: url(&quot;https://shen.ua/wp-content/uploads/2019/10/uborka-aeroportov-1.jpg&quot;) url(&quot;https://shen.ua/wp-content/uploads/2019/10/uborka-aeroportov-1.jpg&quot;); -fx-background-size: cover;">
+               <children>
+                  <AnchorPane layoutX="218.0" layoutY="119.0" prefHeight="406.0" prefWidth="347.0" style="-fx-background-color: #fff4be; -fx-background-radius: 50; -fx-border-color: black; -fx-border-radius: 50;">
+                     <children>
+                        <Button fx:id="editUserButton" layoutX="35.0" layoutY="326.0" mnemonicParsing="false" onAction="#editUserButtonPressed" prefHeight="36.0" prefWidth="126.0" style="-fx-background-color: none; -fx-border-color: black; -fx-border-radius: 10;" text="Редактировать" />
+                        <Label layoutX="102.0" layoutY="14.0" text="Профиль">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="90.0" layoutY="106.0" text="Пароль">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="79.0" layoutY="134.0" text="Фамилия">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="118.0" layoutY="163.0" prefHeight="26.0" prefWidth="35.0" text="Имя">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="78.0" layoutY="190.0" text="Отчество">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="23.0" layoutY="217.0" text="Серия паспорта">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="18.0" layoutY="244.0" text="Номер паспорта">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="101.0" layoutY="78.0" text="E-mail">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="mailUserTextField" layoutX="174.0" layoutY="79.0" />
+                        <TextField fx:id="passwordUserTextField" layoutX="174.0" layoutY="107.0" />
+                        <TextField fx:id="lastnameUserTextField" layoutX="174.0" layoutY="135.0" />
+                        <TextField fx:id="firstnameUserTextField" layoutX="174.0" layoutY="163.0" />
+                        <TextField fx:id="middlenameUserTextField" layoutX="174.0" layoutY="191.0" />
+                        <TextField fx:id="passportSeriesUserTextField" layoutX="174.0" layoutY="218.0" />
+                        <TextField fx:id="passportNumberUserTextField" layoutX="174.0" layoutY="245.0" />
+                        <Button fx:id="saveUserButton" layoutX="185.0" layoutY="326.0" mnemonicParsing="false" onAction="#saveUserButtonPressed" prefHeight="36.0" prefWidth="126.0" style="-fx-background-color: none; -fx-border-color: black; -fx-border-radius: 10;" text="Сохранить" />
+                        <Label layoutX="5.0" layoutY="279.0" text="Уровень доступа: администратор">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <CheckBox fx:id="isAdminCheckBox" layoutX="289.0" layoutY="284.0" mnemonicParsing="false" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+            <Pane fx:id="usersPane" prefHeight="603.0" prefWidth="815.0" style="-fx-background-image: url(&quot;https://image.freepik.com/free-photo/sky-cloud-clouds-background_121-69383.jpg&quot;); -fx-background-size: cover;">
+               <children>
+                  <TableView fx:id="usersTableView" layoutY="42.0" onMouseClicked="#userTableRowSelected" prefHeight="560.0" prefWidth="783.0">
+                    <columns>
+                      <TableColumn fx:id="mailColumn" prefWidth="112.79998779296875" text="E-mail" />
+                      <TableColumn fx:id="passwordColumn" minWidth="0.0" prefWidth="110.4000244140625" text="Пароль" />
+                        <TableColumn fx:id="lastNameColumn" prefWidth="123.20001220703125" text="Фамилия" />
+                        <TableColumn fx:id="firstNameColumn" prefWidth="120.79998779296875" text="Имя" />
+                        <TableColumn fx:id="middleNameColumn" prefWidth="101.60003662109375" text="Отчество" />
+                        <TableColumn fx:id="passportSeriesColumn" prefWidth="102.4000244140625" text="Серия паспорта" />
+                        <TableColumn fx:id="passportNumberColumn" prefWidth="114.4000244140625" text="Номер паспорта" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="printUserInformationButton" layoutX="563.0" layoutY="608.0" mnemonicParsing="false" onAction="#handleCliks" style="-fx-background-color: none;" text="Информация">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="removeUserButton" layoutX="669.0" layoutY="608.0" mnemonicParsing="false" onAction="#removeUserButtonPressed" prefHeight="30.0" prefWidth="91.0" style="-fx-background-color: none;" text="Удалить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane fx:id="reportsPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-image: url(&quot;https://shen.ua/wp-content/uploads/2019/10/uborka-aeroportov-1.jpg&quot;) url(&quot;https://shen.ua/wp-content/uploads/2019/10/uborka-aeroportov-1.jpg&quot;); -fx-background-size: cover;">
+               <children>
+                  <AnchorPane layoutX="174.0" layoutY="175.0" prefHeight="295.0" prefWidth="435.0" style="-fx-background-color: #fff4be; -fx-background-radius: 50; -fx-border-color: black; -fx-border-radius: 50;">
+                     <children>
+                        <Button fx:id="userReportButton" layoutX="80.0" layoutY="68.0" mnemonicParsing="false" onAction="#getUserReportDOCX" prefHeight="36.0" prefWidth="275.0" style="-fx-background-color: none; -fx-border-color: black; -fx-border-radius: 10;" text="Распечатать docx-отчет о пользователях" />
+                        <Button fx:id="ticketReportButton" layoutX="80.0" layoutY="111.0" mnemonicParsing="false" onAction="#getTicketReportDOCX" prefHeight="36.0" prefWidth="275.0" style="-fx-background-color: none; -fx-border-color: black; -fx-border-radius: 10;" text="Распечатать docx-отчет о билетах" />
+                        <Button fx:id="flightReportButton" layoutX="80.0" layoutY="156.0" mnemonicParsing="false" onAction="#getFlightReportDOCX" prefHeight="36.0" prefWidth="275.0" style="-fx-background-color: none; -fx-border-color: black; -fx-border-radius: 10;" text="Распечатать docx-отчет о рейсах" />
+                        <Button fx:id="airportReportButton" layoutX="80.0" layoutY="204.0" mnemonicParsing="false" onAction="#getAirportReportDOCX" prefHeight="36.0" prefWidth="275.0" style="-fx-background-color: none; -fx-border-color: black; -fx-border-radius: 10;" text="Распечатать docx-отчет об аэропортах" />
+                        <Button fx:id="cityReportButton" layoutX="80.0" layoutY="248.0" mnemonicParsing="false" onAction="#getCityReportDOCX" prefHeight="36.0" prefWidth="275.0" style="-fx-background-color: none; -fx-border-color: black; -fx-border-radius: 10;" text="Распечатать docx-отчет о городах" />
+                        <Label layoutX="47.0" layoutY="14.0" text="Печать отчетов в формате .docx">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+            <Pane fx:id="addFlightPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-image: url(&quot;https://shen.ua/wp-content/uploads/2019/10/uborka-aeroportov-1.jpg&quot;); -fx-background-size: cover;">
+               <children>
+                  <AnchorPane layoutX="80.0" layoutY="153.0" prefHeight="325.0" prefWidth="623.0" style="-fx-background-color: #fff4be; -fx-border-color: black; -fx-background-radius: 100; -fx-border-radius: 100;">
+                     <children>
+                        <Label layoutX="217.0" layoutY="85.0" text="Откуда">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="236.0" layoutY="121.0" text="Куда">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="160.0" layoutY="191.0" prefHeight="27.0" prefWidth="115.0" text="Время вылета">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="173.0" layoutY="155.0" text="Дата вылета">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="157.0" layoutY="14.0" text="Добавление рейса" underline="true">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="airportOfDepartureChoiceBox" layoutX="299.0" layoutY="86.0" prefHeight="26.0" prefWidth="174.0" />
+                        <Button layoutX="328.0" layoutY="276.0" mnemonicParsing="false" onAction="#addFlightButtonPressed" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: none; -fx-border-color: black; -fx-border-radius: 10;" text="Сохранить" />
+                        <Button layoutX="168.0" layoutY="276.0" mnemonicParsing="false" onAction="#switchToAddAirportView" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: none; -fx-border-color: black; -fx-border-radius: 10;" text="Добавить аэропорт" />
+                        <ChoiceBox fx:id="airportOfDestinationChoiceBox" layoutX="299.0" layoutY="122.0" prefHeight="26.0" prefWidth="174.0" />
+                        <DatePicker fx:id="dateOfDepartureDatePicker" layoutX="299.0" layoutY="156.0" />
+                        <TextField fx:id="timeOfDepartureTextField" layoutX="299.0" layoutY="192.0" prefHeight="26.0" prefWidth="174.0" />
+                        <Label layoutX="188.0" layoutY="226.0" prefHeight="27.0" prefWidth="115.0" text="Стоимость">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="costTextField" layoutX="299.0" layoutY="227.0" prefHeight="26.0" prefWidth="174.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+            <Pane fx:id="flightsPane" prefHeight="603.0" prefWidth="733.0" style="-fx-background-image: url(&quot;https://image.freepik.com/free-photo/sky-cloud-clouds-background_121-69383.jpg&quot;); -fx-background-size: cover;">
+               <children>
+                  <TableView fx:id="flightTableView" layoutY="42.0" onMouseClicked="#flightTableRowSelected" prefHeight="560.0" prefWidth="783.0">
+                    <columns>
+                      <TableColumn fx:id="idFlightColumn" prefWidth="34.39996337890625" text="№" />
+                        <TableColumn fx:id="cityOfDepartureColumn" prefWidth="89.59999084472656" text="Откуда" />
+                        <TableColumn fx:id="airportOfDepartureColumn" minWidth="0.0" prefWidth="142.39996337890625" text="Аэропорт отправления" />
+                        <TableColumn fx:id="cityOfDestinationColumn" prefWidth="114.39996337890625" text="Куда" />
+                        <TableColumn fx:id="airportOfDestinationColumn" minWidth="0.0" prefWidth="132.0" text="Аэропорт прибытия" />
+                        <TableColumn fx:id="dateColumn" minWidth="0.0" prefWidth="98.4000244140625" text="Дата" />
+                        <TableColumn fx:id="timeColumn" prefWidth="84.0" text="Время" />
+                        <TableColumn fx:id="costColumn" prefWidth="90.400146484375" text="Цена" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="removeFlightButton" layoutX="605.0" layoutY="608.0" mnemonicParsing="false" onAction="#removeFlightButtonPressed" style="-fx-background-color: none;" text="Удалить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="editFlightButton" layoutX="490.0" layoutY="608.0" mnemonicParsing="false" style="-fx-background-color: none;" text="Редактировать">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="addFlightButton" layoutX="677.0" layoutY="608.0" mnemonicParsing="false" onAction="#handleCliks" style="-fx-background-color: none;" text="Добавить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane fx:id="profilePane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-image: url(&quot;https://shen.ua/wp-content/uploads/2019/10/uborka-aeroportov-1.jpg&quot;) url(&quot;https://shen.ua/wp-content/uploads/2019/10/uborka-aeroportov-1.jpg&quot;); -fx-background-size: cover;">
+               <children>
+                  <AnchorPane layoutX="218.0" layoutY="154.0" prefHeight="345.0" prefWidth="347.0" style="-fx-background-color: #fff4be; -fx-background-radius: 50; -fx-border-color: black; -fx-border-radius: 50;">
+                     <children>
+                        <Button fx:id="editProfileButton" layoutX="35.0" layoutY="288.0" mnemonicParsing="false" onAction="#editProfileButtonPressed" prefHeight="36.0" prefWidth="126.0" style="-fx-background-color: none; -fx-border-color: black; -fx-border-radius: 10;" text="Редактировать" />
+                        <Label layoutX="102.0" layoutY="14.0" text="Профиль">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="90.0" layoutY="106.0" text="Пароль">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="79.0" layoutY="134.0" text="Фамилия">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="118.0" layoutY="163.0" prefHeight="26.0" prefWidth="35.0" text="Имя">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="78.0" layoutY="190.0" text="Отчество">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="23.0" layoutY="217.0" text="Серия паспорта">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="18.0" layoutY="244.0" text="Номер паспорта">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="101.0" layoutY="78.0" text="E-mail">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="mailProfileTextField" layoutX="174.0" layoutY="79.0" />
+                        <TextField fx:id="passwordProfileTextField" layoutX="174.0" layoutY="107.0" />
+                        <TextField fx:id="lastnameProfileTextField" layoutX="174.0" layoutY="135.0" />
+                        <TextField fx:id="firstnameProfileTextField" layoutX="174.0" layoutY="163.0" />
+                        <TextField fx:id="middlenameProfileTextField" layoutX="174.0" layoutY="191.0" />
+                        <TextField fx:id="passportSeriesProfileTextField" layoutX="174.0" layoutY="218.0" />
+                        <TextField fx:id="passportNumberProfileTextField" layoutX="174.0" layoutY="245.0" />
+                        <Button fx:id="saveProfileButton" layoutX="185.0" layoutY="288.0" mnemonicParsing="false" onAction="#saveProfileButtonPressed" prefHeight="36.0" prefWidth="126.0" style="-fx-background-color: none; -fx-border-color: black; -fx-border-radius: 10;" text="Сохранить" />
+                     </children>
+                  </AnchorPane>
+               </children></Pane>
+            <Pane fx:id="homePane" prefHeight="603.0" prefWidth="783.0" style="-fx-background-image: url(&quot;https://shen.ua/wp-content/uploads/2019/10/uborka-aeroportov-1.jpg&quot;); -fx-background-size: cover;">
+               <children>
+                  <AnchorPane layoutX="105.0" layoutY="233.0" prefHeight="179.0" prefWidth="574.0" style="-fx-background-color: #fff4be; -fx-background-radius: 50; -fx-border-color: black; -fx-border-radius: 50;">
+                     <children>
+                        <Label layoutX="33.0" layoutY="29.0" text="Добро пожаловать, ">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="adminFIOTextField" layoutX="256.0" layoutY="21.0" prefHeight="51.0" prefWidth="309.0" style="-fx-background-color: none;">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="43.0" layoutY="90.0" text="На данный момент у нас продано">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="amountOfTicketsTextField" layoutX="331.0" layoutY="84.0" prefHeight="39.0" prefWidth="58.0" style="-fx-background-color: none;">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="393.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="билетов">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Label layoutX="54.0" layoutY="124.0" text="Доход от продажи составляет">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="incomeTextField" layoutX="308.0" layoutY="118.0" prefHeight="39.0" prefWidth="91.0" style="-fx-background-color: none;">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="402.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="рублей">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+               </children></Pane>
+            <Pane fx:id="ticketsPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-image: url(&quot;https://image.freepik.com/free-photo/sky-cloud-clouds-background_121-69383.jpg&quot;); -fx-background-size: cover;">
+               <children>
+                  <TableView fx:id="ticketsTableView" layoutY="42.0" prefHeight="560.0" prefWidth="783.0">
+                    <columns>
+                      <TableColumn fx:id="idTicketColumn" prefWidth="65.59994506835938" text="№ Билета" />
+                      <TableColumn fx:id="idFlightColumn1" prefWidth="57.60005187988281" text="№ Рейса" />
+                        <TableColumn fx:id="cityOfDepartureColumn1" prefWidth="96.800048828125" text="Откуда" />
+                        <TableColumn fx:id="cityOfDestinationColumn1" prefWidth="110.39996337890625" text="Куда" />
+                        <TableColumn fx:id="flightDateColumn" prefWidth="103.199951171875" text="Дата рейса" />
+                        <TableColumn fx:id="flightTimeColumn" prefWidth="100.800048828125" text="Время" />
+                        <TableColumn fx:id="userLastnameColumn" prefWidth="111.20001220703125" text="Фамилия" />
+                        <TableColumn fx:id="dateSaleColumn" prefWidth="133.39996337890625" text="Дата покупки билета" />
+                    </columns>
+                  </TableView>
+               </children>
+            </Pane>
+            <Pane fx:id="statisticsPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-image: url(&quot;https://shen.ua/wp-content/uploads/2019/10/uborka-aeroportov-1.jpg&quot;) url(&quot;https://shen.ua/wp-content/uploads/2019/10/uborka-aeroportov-1.jpg&quot;); -fx-background-size: cover;">
+               <children>
+                  <AnchorPane layoutX="116.0" layoutY="240.0" prefHeight="165.0" prefWidth="552.0" style="-fx-background-color: #fff4be; -fx-border-color: black; -fx-background-radius: 50; -fx-border-radius: 50;">
+                     <children>
+                        <Label layoutX="59.0" layoutY="26.0" text="Статистика посещения городов">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="12.0" layoutY="69.0" text="Популярность аэропортов среди клиентов">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="386.0" layoutY="22.0" mnemonicParsing="false" onAction="#switchToCitiesDiagram" prefHeight="36.0" prefWidth="151.0" style="-fx-background-color: none; -fx-border-color: black; -fx-border-radius: 10;" text="Открыть диаграмму">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="386.0" layoutY="65.0" mnemonicParsing="false" onAction="#switchToAirportDiagram" prefHeight="36.0" prefWidth="151.0" style="-fx-background-color: none; -fx-border-color: black; -fx-border-radius: 10;" text="Открыть диаграмму">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="104.0" layoutY="112.0" text="Топ клиентов">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="386.0" layoutY="108.0" mnemonicParsing="false" onAction="#switchToUsersDiagram" prefHeight="36.0" prefWidth="151.0" style="-fx-background-color: none; -fx-border-color: black; -fx-border-radius: 10;" text="Открыть диаграмму">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

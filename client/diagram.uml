@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="0.0" y="75.0">org.onton.PassengerInfoViewController</node>
+    <node x="309.0" y="75.0">org.onton.LoginFailedViewController</node>
+    <node x="0.0" y="375.0">org.onton.UsersDiagramController</node>
+    <node x="572.0" y="600.0">org.onton.entity.User</node>
+    <node x="261.0" y="450.0">org.onton.AdminMenuController</node>
+    <node x="285.0" y="225.0">org.onton.PrintFullInfoController</node>
+    <node x="0.0" y="300.0">org.onton.AuthorizationController</node>
+    <node x="0.0" y="450.0">org.onton.AddCityViewController</node>
+    <node x="149.0" y="600.0">org.onton.entity.Ticket</node>
+    <node x="0.0" y="525.0">org.onton.entity.AirportTableClass</node>
+    <node x="293.0" y="150.0">org.onton.AddAirportViewController</node>
+    <node x="0.0" y="600.0">org.onton.entity.Airport</node>
+    <node x="290.0" y="600.0">org.onton.entity.Flight</node>
+    <node x="0.0" y="225.0">org.onton.AirportDiagramController</node>
+    <node x="0.0" y="0.0">org.onton.RegistrationFailedViewController</node>
+    <node x="728.75" y="570.0">org.onton.entity.City</node>
+    <node x="229.0" y="525.0">org.onton.entity.FlightTableClass</node>
+    <node x="506.0" y="450.0">org.onton.UserMenuController</node>
+    <node x="349.0" y="0.0">org.onton.PurchaseFailedViewController</node>
+    <node x="269.0" y="375.0">org.onton.RegistrationController</node>
+    <node x="0.0" y="150.0">org.onton.PurchaseReceiptController</node>
+    <node x="431.0" y="600.0">org.onton.Client</node>
+    <node x="277.0" y="300.0">org.onton.CitiesDiagramController</node>
+    <node x="450.0" y="525.0">org.onton.entity.TicketTableClass</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="0.8" x="655.0" y="316.7142857142859" />
+  <SelectedNodes>
+    <node>org.onton.entity.City</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

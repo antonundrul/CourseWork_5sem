@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="575.0" prefWidth="735.0" style="-fx-background-image: url(&quot; https://image.freepik.com/free-photo/sky-cloud-clouds-background_121-69383.jpg&quot;); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.onton.AirportDiagramController">
+   <children>
+      <Button layoutX="258.0" layoutY="505.0" mnemonicParsing="false" onAction="#switchToAdminMenu" prefHeight="42.0" prefWidth="220.0" style="-fx-background-color: none; -fx-border-color: black; -fx-border-radius: 10;" text="Вернуться в меню администратора" />
+      <PieChart fx:id="airportsChart" layoutX="5.0" layoutY="2.0" prefHeight="462.0" prefWidth="726.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="239.0" prefWidth="546.0" style="-fx-background-image: url(&quot;https://image.freepik.com/free-photo/sky-cloud-clouds-background_121-69383.jpg&quot;); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.onton.PurchaseReceiptController">
+   <children>
+      <Label layoutX="13.0" layoutY="76.0" text="Операция проведена успешно!">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

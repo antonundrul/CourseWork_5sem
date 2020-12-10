@@ -1,0 +1,4 @@
+#Thu Dec 10 12:52:04 MSK 2020
+configuration*?=58E08A22227215E3AB9A259073353A39597C4EB6
+module-resource*?\:checkstyle-xpath-suppressions.xml=131C1F7D3527935E3E45EB864207A819464011AB
+module-resource*?\:checkstyle-suppressions.xml=2F8182A9A6C5DD9D45BB8899F629AFEF608390E8

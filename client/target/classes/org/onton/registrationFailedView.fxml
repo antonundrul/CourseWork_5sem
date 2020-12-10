@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="249.0" prefWidth="400.0" style="-fx-background-image: url(&quot; https://image.freepik.com/free-photo/sky-cloud-clouds-background_121-69383.jpg&quot;); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.onton.RegistrationFailedViewController">
+    <children>
+        <Label layoutX="15.0" layoutY="39.0" prefHeight="54.0" prefWidth="364.0" text="Пользователь с таким">
+            <font>
+                <Font size="36.0" />
+            </font>
+        </Label>
+        <Button layoutX="97.0" layoutY="183.0" mnemonicParsing="false" onAction="#switchToRegistration" style="-fx-background-color: none; -fx-border-color: black; -fx-border-radius: 10;" text="Попробовать еще раз">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+      <Label layoutX="12.0" layoutY="79.0" prefHeight="54.0" prefWidth="378.0" text="E-mail уже существует!">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

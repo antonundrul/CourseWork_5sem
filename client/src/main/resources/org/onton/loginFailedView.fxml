@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="234.0" prefWidth="351.0" style="-fx-background-image: url(&quot; https://image.freepik.com/free-photo/sky-cloud-clouds-background_121-69383.jpg&quot;); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.onton.LoginFailedViewController">
+   <children>
+      <Label layoutX="56.0" layoutY="50.0" text="Ошибка входа">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Button layoutX="72.0" layoutY="158.0" mnemonicParsing="false" onAction="#switchToAuthorization" style="-fx-background-color: none; -fx-border-color: black; -fx-border-radius: 10;" text="Попробовать еще раз">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
