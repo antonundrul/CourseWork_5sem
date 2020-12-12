@@ -40,6 +40,12 @@ public class Flight implements Serializable {
     @Column(name = "cost")
     private int cost;
 
+    @NotNull
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE,
+            CascadeType.PERSIST, CascadeType.REFRESH})
+    @JoinColumn(name = "airline_id")
+    private Airline airline;
+
     public Flight() {
     }
 
@@ -89,5 +95,13 @@ public class Flight implements Serializable {
 
     public void setCost(int cost) {
         this.cost = cost;
+    }
+
+    public Airline getAirline() {
+        return airline;
+    }
+
+    public void setAirline(Airline airline) {
+        this.airline = airline;
     }
 }

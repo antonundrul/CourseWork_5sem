@@ -1,31 +1,27 @@
 package org.onton.DAO;
 
-
-import org.onton.db.SessionFactorySingleton;
-import org.onton.entity.Airport;
-import org.onton.entity.Flight;
 import org.hibernate.JDBCException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
+import org.onton.db.SessionFactorySingleton;
+import org.onton.entity.Airline;
 
 import java.util.List;
 
-public class FlightDAO implements DAO<Flight> {
+public class AirlineDAO implements DAO<Airline>{
 
     private final SessionFactory factory = SessionFactorySingleton.getInstance();
 
     @Override
-    public List<Flight> getList() {
-        List<Flight> list = null;
+    public List<Airline> getList() {
+        List<Airline> list = null;
         Session session = factory.getCurrentSession();
         try {
             session.beginTransaction();
 
-            Query<Flight> query = session.createQuery("from Flight c inner join fetch c.airportOfDeparture " +
-                    "inner join fetch c.airportOfDestination " +
-                    "inner join fetch c.airline "  +
-                    "order by c.id", Flight.class);
+            Query<Airline> query =
+                    session.createQuery("FROM Airline", Airline.class);
             list = query.getResultList();
 
             session.getTransaction().commit();
@@ -36,7 +32,7 @@ public class FlightDAO implements DAO<Flight> {
     }
 
     @Override
-    public void save(Flight object) throws JDBCException {
+    public void save(Airline object) throws JDBCException {
         Session session = factory.getCurrentSession();
         try {
             session.beginTransaction();
@@ -48,17 +44,17 @@ public class FlightDAO implements DAO<Flight> {
     }
 
     @Override
-    public Flight get(int id) {
+    public Airline get(int id) {
         Session session = factory.getCurrentSession();
-        Flight flight = null;
+        Airline airline = null;
         try {
             session.beginTransaction();
-            flight = session.get(Flight.class, id);
+            airline = session.get(Airline.class, id);
             session.getTransaction().commit();
         } finally {
             session.close();
         }
-        return flight;
+        return airline;
     }
 
     @Override
@@ -67,8 +63,8 @@ public class FlightDAO implements DAO<Flight> {
         try {
             session.beginTransaction();
 
-            Query query = session.createQuery("delete from Flight where id=:flightId");
-            query.setParameter("flightId", id);
+            Query query = session.createQuery("delete from Airline where id=:airlineId");
+            query.setParameter("airlineId", id);
             query.executeUpdate();
 
             session.getTransaction().commit();

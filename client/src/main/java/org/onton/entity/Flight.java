@@ -13,6 +13,7 @@ public class Flight implements Serializable {
     private LocalDate dateOfDeparture;
     private LocalTime timeOfDeparture;
     private int cost;
+    private Airline airline;
 
     public Flight() {
     }
@@ -63,6 +64,14 @@ public class Flight implements Serializable {
 
     public void setCost(int cost) {
         this.cost = cost;
+    }
+
+    public Airline getAirline() {
+        return airline;
+    }
+
+    public void setAirline(Airline airline) {
+        this.airline = airline;
     }
 }
 

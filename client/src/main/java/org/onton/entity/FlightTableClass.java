@@ -5,6 +5,7 @@ import java.time.LocalTime;
 
 public class FlightTableClass {
     private int id;
+    private String airline;
     private String cityOfDeparture;
     private String airportOfDeparture;
     private String cityOfDestination;
@@ -75,5 +76,13 @@ public class FlightTableClass {
 
     public void setCost(int cost) {
         this.cost = cost;
+    }
+
+    public String getAirline() {
+        return airline;
+    }
+
+    public void setAirline(String airline) {
+        this.airline = airline;
     }
 }

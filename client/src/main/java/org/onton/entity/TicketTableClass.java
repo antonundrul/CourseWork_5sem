@@ -7,6 +7,7 @@ public class TicketTableClass {
 
     private int idTicket;
     private int idFlight;
+    private String airline;
     private String cityOfDeparture;
     private String cityOfDestination;
     private LocalDate dateOfFlight;
@@ -76,5 +77,13 @@ public class TicketTableClass {
 
     public void setTimeOfFlight(LocalTime timeOfFlight) {
         this.timeOfFlight = timeOfFlight;
+    }
+
+    public String getAirline() {
+        return airline;
+    }
+
+    public void setAirline(String airline) {
+        this.airline = airline;
     }
 }

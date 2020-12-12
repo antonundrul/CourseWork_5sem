@@ -32,6 +32,7 @@
         <mapping class="org.onton.entity.Flight"/>
         <mapping class="org.onton.entity.Airport"/>
         <mapping class="org.onton.entity.City"/>
+        <mapping class="org.onton.entity.Airline"/>
 
     </session-factory>
 

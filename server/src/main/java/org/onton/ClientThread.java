@@ -56,12 +56,14 @@ public class ClientThread implements Runnable {
                     case "add_flight" -> addFlight();
                     case "add_airport" -> addAirport();
                     case "add_city" -> addCity();
+//                    case "add_airline" -> addAirline();
 
                     case "print_users" -> printUsers();
                     case "print_tickets" -> printTickets();
                     case "print_flights" -> printFlights();
                     case "print_airports" -> printAirports();
                     case "print_cities" -> printCities();
+                    case "print_airlines" -> printAirlines();
 
                     case "delete_user" -> deleteUser();
                     case "delete_ticket" -> deleteTicket();
@@ -243,6 +245,15 @@ public class ClientThread implements Runnable {
         }
     }
 
+    private void printAirlines() {
+        List<Airline> airlineList = getAirlineList();
+        try {
+            outputStream.writeObject(airlineList);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     private void deleteUser() throws Exception {
         User user = (User) inputStream.readObject();
@@ -329,6 +340,16 @@ public class ClientThread implements Runnable {
 
         if (list == null) {
             list = new ArrayList<City>();
+        }
+        return list;
+    }
+
+    public List<Airline> getAirlineList() {
+        DAO<Airline> dao = new AirlineDAO();
+        List<Airline> list = dao.getList();
+
+        if (list == null) {
+            list = new ArrayList<Airline>();
         }
         return list;
     }

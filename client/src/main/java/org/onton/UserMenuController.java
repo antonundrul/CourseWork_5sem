@@ -50,26 +50,17 @@ public class UserMenuController implements Initializable {
     @FXML
     private Button ticketsPageButton;
 
-    @FXML
-    private TableView<FlightTableClass> flightTableView;
-    @FXML
-    private TableColumn<FlightTableClass, Integer> idFlightColumn;
-    @FXML
-    private TableColumn<FlightTableClass, String> cityOfDepartureColumn;
-    @FXML
-    private TableColumn<FlightTableClass, String> airportOfDepartureColumn;
-    @FXML
-    private TableColumn<FlightTableClass, String> cityOfDestinationColumn;
-    @FXML
-    private TableColumn<FlightTableClass, String> airportOfDestinationColumn;
-    @FXML
-    private TableColumn<FlightTableClass, LocalDate> dateColumn;
-    @FXML
-    private TableColumn<FlightTableClass, LocalTime> timeColumn;
-    @FXML
-    private TableColumn<FlightTableClass, Integer> costColumn;
-    @FXML
-    private Button buyTicketButton;
+    @FXML private TableView<FlightTableClass> flightTableView;
+    @FXML private TableColumn<FlightTableClass, Integer> idFlightColumn;
+    @FXML private TableColumn<FlightTableClass, String> airlineFlightColumn;
+    @FXML private TableColumn<FlightTableClass, String> cityOfDepartureColumn;
+    @FXML private TableColumn<FlightTableClass, String> airportOfDepartureColumn;
+    @FXML private TableColumn<FlightTableClass, String> cityOfDestinationColumn;
+    @FXML private TableColumn<FlightTableClass, String> airportOfDestinationColumn;
+    @FXML private TableColumn<FlightTableClass, LocalDate> dateColumn;
+    @FXML private TableColumn<FlightTableClass, LocalTime> timeColumn;
+    @FXML private TableColumn<FlightTableClass, Integer> costColumn;
+    @FXML private Button buyTicketButton;
 
 
     @FXML
@@ -81,24 +72,16 @@ public class UserMenuController implements Initializable {
     @FXML
     private TableColumn<AirportTableClass, String> airportCityColumn;
 
-    @FXML
-    private TableView<TicketTableClass> ticketsTableView;
-    @FXML
-    private TableColumn<TicketTableClass, Integer> idTicketColumn;
-    @FXML
-    private TableColumn<TicketTableClass, Integer> idFlightColumn1;
-    @FXML
-    private TableColumn<TicketTableClass, String> cityOfDepartureColumn1;
-    @FXML
-    private TableColumn<TicketTableClass, String> cityOfDestinationColumn1;
-    @FXML
-    private TableColumn<TicketTableClass, LocalDate> flightDateColumn;
-    @FXML
-    private TableColumn<TicketTableClass, LocalTime> flightTimeColumn;
-    @FXML
-    private TableColumn<TicketTableClass, String> userLastnameColumn;
-    @FXML
-    private TableColumn<TicketTableClass, LocalDate> dateSaleColumn;
+    @FXML private TableView<TicketTableClass> ticketsTableView;
+    @FXML private TableColumn<TicketTableClass, Integer> idTicketColumn;
+    @FXML private TableColumn<TicketTableClass, Integer> idFlightColumn1;
+    @FXML private TableColumn<TicketTableClass, String> airlineTicketColumn;
+    @FXML private TableColumn<TicketTableClass, String> cityOfDepartureColumn1;
+    @FXML private TableColumn<TicketTableClass, String> cityOfDestinationColumn1;
+    @FXML private TableColumn<TicketTableClass, LocalDate> flightDateColumn;
+    @FXML private TableColumn<TicketTableClass, LocalTime> flightTimeColumn;
+    @FXML private TableColumn<TicketTableClass, String> userLastnameColumn;
+    @FXML private TableColumn<TicketTableClass, LocalDate> dateSaleColumn;
 
 
     @FXML
@@ -160,6 +143,7 @@ public class UserMenuController implements Initializable {
 
     public void flightTableInit(List<Flight> flightList) {
         idFlightColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        airlineFlightColumn.setCellValueFactory(new PropertyValueFactory<>("airline"));
         cityOfDepartureColumn.setCellValueFactory(new PropertyValueFactory<>("cityOfDeparture"));
         airportOfDepartureColumn.setCellValueFactory(new PropertyValueFactory<>("airportOfDeparture"));
         cityOfDestinationColumn.setCellValueFactory(new PropertyValueFactory<>("cityOfDestination"));
@@ -233,6 +217,7 @@ public class UserMenuController implements Initializable {
 
         idTicketColumn.setCellValueFactory(new PropertyValueFactory<>("idTicket"));
         idFlightColumn1.setCellValueFactory(new PropertyValueFactory<>("idFlight"));
+       airlineTicketColumn.setCellValueFactory(new PropertyValueFactory<>("airline"));
         cityOfDepartureColumn1.setCellValueFactory(new PropertyValueFactory<>("cityOfDeparture"));
         cityOfDestinationColumn1.setCellValueFactory(new PropertyValueFactory<>("cityOfDestination"));
         flightDateColumn.setCellValueFactory(new PropertyValueFactory<>("dateOfFlight"));
@@ -401,6 +386,7 @@ public class UserMenuController implements Initializable {
                 list.add(flightTableClass);
 
                 list.get(i).setId(flightList.get(i).getId());
+                list.get(i).setAirline(flightList.get(i).getAirline().getName());
                 list.get(i).setCityOfDeparture(flightList.get(i).getAirportOfDeparture().getCity().getName());
                 list.get(i).setAirportOfDeparture(flightList.get(i).getAirportOfDeparture().getName());
                 list.get(i).setCityOfDestination(flightList.get(i).getAirportOfDestination().getCity().getName());
@@ -467,6 +453,18 @@ public class UserMenuController implements Initializable {
         return list;
     }
 
+    public List<Airline> getAirlineList() {
+        List<Airline> list = null;
+        try {
+            Client.coos.writeObject("print_airlines");
+            list = (List<Airline>) Client.cois.readObject();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return list;
+    }
+
     public List<TicketTableClass> getMyTicketTableClassList(List<Ticket> ticketList) {
         List<TicketTableClass> list = new ArrayList<>();
         try {
@@ -477,6 +475,7 @@ public class UserMenuController implements Initializable {
                     list.add(ticketTableClass);
                     list.get(counter).setIdTicket(j.getId());
                     list.get(counter).setIdFlight(j.getFlight().getId());
+                    list.get(counter).setAirline(j.getFlight().getAirline().getName());
                     list.get(counter).setCityOfDeparture(j.getFlight().getAirportOfDeparture().getCity().getName());
                     list.get(counter).setCityOfDestination(j.getFlight().getAirportOfDestination().getCity().getName());
                     list.get(counter).setDateOfFlight(j.getFlight().getDateOfDeparture());
