@@ -718,5 +718,7 @@ public class AdminMenuController implements Initializable {
         Client.coos.writeObject("print_cities_in_docx");
     }
 
-
+    public void getReviewsReportDOCX(ActionEvent event) throws IOException {
+        Client.coos.writeObject("print_reviews_in_docx");
+    }
 }

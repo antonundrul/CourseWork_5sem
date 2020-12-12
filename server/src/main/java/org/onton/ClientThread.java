@@ -79,6 +79,7 @@ public class ClientThread implements Runnable {
                     case "print_flights_in_docx" -> printFlightsInDOCX();
                     case "print_airports_in_docx" -> printAirportsInDOCX();
                     case "print_cities_in_docx" -> printCitiesInDOCX();
+                    case "print_reviews_in_docx" -> printReviewsInDOCX();
 
                     case "buy_ticket" -> buyTicket();
                     case "print_my_ticket_in_docx" -> printMyTicketInDOCX();
@@ -603,6 +604,39 @@ public class ClientThread implements Runnable {
         document.write(out);
         out.close();
         System.out.println("билет_"+myTicket.getUser().getLastName()+"_"+myTicket.getId()+".docx written successully");
+    }
+
+
+    public void printReviewsInDOCX() throws IOException, URISyntaxException, DocumentException, ClassNotFoundException {
+
+        XWPFDocument document = new XWPFDocument();
+
+        //Write the Document in file system
+        FileOutputStream out = new FileOutputStream(new File("reviews.docx"));
+        //create table
+        XWPFTable table = document.createTable();
+
+        //create first row
+        XWPFTableRow tableRowOne = table.getRow(0);
+        tableRowOne.getCell(0).setText("ID");
+        tableRowOne.addNewTableCell().setText("E-mail");
+        tableRowOne.addNewTableCell().setText("Аэропорт");
+        tableRowOne.addNewTableCell().setText("Отзыв");
+
+        List<Review> reviewList = getReviewList();
+        for(Review i: reviewList){
+            XWPFTableRow tableRow = table.createRow();
+
+            tableRow.getCell(0).setText(""+i.getId()+"");
+            tableRow.getCell(1).setText(""+i.getUser().getMail()+"");
+            tableRow.getCell(2).setText(""+i.getAirport().getName()+"");
+            tableRow.getCell(3).setText(""+i.getFeedback()+"");
+
+        }
+
+        document.write(out);
+        out.close();
+        System.out.println("reviews.docx written successully");
     }
 
     public void buyTicket(){
