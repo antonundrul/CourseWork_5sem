@@ -152,64 +152,20 @@
                   </AnchorPane>
                </children>
             </Pane>
-            <Pane fx:id="addFlightPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-image: url(&quot;https://shen.ua/wp-content/uploads/2019/10/uborka-aeroportov-1.jpg&quot;); -fx-background-size: cover;">
-               <children>
-                  <AnchorPane layoutX="80.0" layoutY="153.0" prefHeight="325.0" prefWidth="623.0" style="-fx-background-color: #fff4be; -fx-border-color: black; -fx-background-radius: 100; -fx-border-radius: 100;">
-                     <children>
-                        <Label layoutX="217.0" layoutY="85.0" text="Откуда">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="236.0" layoutY="121.0" text="Куда">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="160.0" layoutY="191.0" prefHeight="27.0" prefWidth="115.0" text="Время вылета">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="173.0" layoutY="155.0" text="Дата вылета">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="157.0" layoutY="14.0" text="Добавление рейса" underline="true">
-                           <font>
-                              <Font size="36.0" />
-                           </font>
-                        </Label>
-                        <ChoiceBox fx:id="airportOfDepartureChoiceBox" layoutX="299.0" layoutY="86.0" prefHeight="26.0" prefWidth="174.0" />
-                        <Button layoutX="328.0" layoutY="276.0" mnemonicParsing="false" onAction="#addFlightButtonPressed" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: none; -fx-border-color: black; -fx-border-radius: 10;" text="Сохранить" />
-                        <Button layoutX="168.0" layoutY="276.0" mnemonicParsing="false" onAction="#switchToAddAirportView" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: none; -fx-border-color: black; -fx-border-radius: 10;" text="Добавить аэропорт" />
-                        <ChoiceBox fx:id="airportOfDestinationChoiceBox" layoutX="299.0" layoutY="122.0" prefHeight="26.0" prefWidth="174.0" />
-                        <DatePicker fx:id="dateOfDepartureDatePicker" layoutX="299.0" layoutY="156.0" />
-                        <TextField fx:id="timeOfDepartureTextField" layoutX="299.0" layoutY="192.0" prefHeight="26.0" prefWidth="174.0" />
-                        <Label layoutX="188.0" layoutY="226.0" prefHeight="27.0" prefWidth="115.0" text="Стоимость">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="costTextField" layoutX="299.0" layoutY="227.0" prefHeight="26.0" prefWidth="174.0" />
-                     </children>
-                  </AnchorPane>
-               </children>
-            </Pane>
             <Pane fx:id="flightsPane" prefHeight="603.0" prefWidth="733.0" style="-fx-background-image: url(&quot;https://image.freepik.com/free-photo/sky-cloud-clouds-background_121-69383.jpg&quot;); -fx-background-size: cover;">
                <children>
                   <TableView fx:id="flightTableView" layoutY="42.0" onMouseClicked="#flightTableRowSelected" prefHeight="560.0" prefWidth="783.0">
-                    <columns>
-                      <TableColumn fx:id="idFlightColumn" prefWidth="34.39996337890625" text="№" />
-                        <TableColumn fx:id="cityOfDepartureColumn" prefWidth="89.59999084472656" text="Откуда" />
-                        <TableColumn fx:id="airportOfDepartureColumn" minWidth="0.0" prefWidth="142.39996337890625" text="Аэропорт отправления" />
-                        <TableColumn fx:id="cityOfDestinationColumn" prefWidth="114.39996337890625" text="Куда" />
-                        <TableColumn fx:id="airportOfDestinationColumn" minWidth="0.0" prefWidth="132.0" text="Аэропорт прибытия" />
-                        <TableColumn fx:id="dateColumn" minWidth="0.0" prefWidth="98.4000244140625" text="Дата" />
-                        <TableColumn fx:id="timeColumn" prefWidth="84.0" text="Время" />
-                        <TableColumn fx:id="costColumn" prefWidth="90.400146484375" text="Цена" />
-                    </columns>
+                     <columns>
+                        <TableColumn fx:id="idFlightColumn" prefWidth="34.4000244140625" text="№" />
+                        <TableColumn fx:id="airlineFlightColumn" prefWidth="99.20002746582031" text="Авиакомпания" />
+                        <TableColumn fx:id="cityOfDepartureColumn" prefWidth="88.0" text="Откуда" />
+                        <TableColumn fx:id="airportOfDepartureColumn" minWidth="0.0" prefWidth="143.20001220703125" text="Аэропорт отправления" />
+                        <TableColumn fx:id="cityOfDestinationColumn" prefWidth="64.0" text="Куда" />
+                        <TableColumn fx:id="airportOfDestinationColumn" minWidth="0.0" prefWidth="123.2000732421875" text="Аэропорт прибытия" />
+                        <TableColumn fx:id="dateColumn" minWidth="0.0" prefWidth="88.79998779296875" text="Дата" />
+                        <TableColumn fx:id="timeColumn" prefWidth="67.2000732421875" text="Время" />
+                        <TableColumn fx:id="costColumn" prefWidth="71.199951171875" text="Цена" />
+                     </columns>
                   </TableView>
                   <Button fx:id="removeFlightButton" layoutX="605.0" layoutY="608.0" mnemonicParsing="false" onAction="#removeFlightButtonPressed" style="-fx-background-color: none;" text="Удалить">
                      <font>
@@ -334,16 +290,17 @@
             <Pane fx:id="ticketsPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-image: url(&quot;https://image.freepik.com/free-photo/sky-cloud-clouds-background_121-69383.jpg&quot;); -fx-background-size: cover;">
                <children>
                   <TableView fx:id="ticketsTableView" layoutY="42.0" prefHeight="560.0" prefWidth="783.0">
-                    <columns>
-                      <TableColumn fx:id="idTicketColumn" prefWidth="65.59994506835938" text="№ Билета" />
-                      <TableColumn fx:id="idFlightColumn1" prefWidth="57.60005187988281" text="№ Рейса" />
-                        <TableColumn fx:id="cityOfDepartureColumn1" prefWidth="96.800048828125" text="Откуда" />
-                        <TableColumn fx:id="cityOfDestinationColumn1" prefWidth="110.39996337890625" text="Куда" />
-                        <TableColumn fx:id="flightDateColumn" prefWidth="103.199951171875" text="Дата рейса" />
-                        <TableColumn fx:id="flightTimeColumn" prefWidth="100.800048828125" text="Время" />
-                        <TableColumn fx:id="userLastnameColumn" prefWidth="111.20001220703125" text="Фамилия" />
-                        <TableColumn fx:id="dateSaleColumn" prefWidth="133.39996337890625" text="Дата покупки билета" />
-                    </columns>
+                     <columns>
+                        <TableColumn fx:id="idTicketColumn" prefWidth="64.80001831054688" text="№ Билета" />
+                        <TableColumn fx:id="idFlightColumn1" prefWidth="56.00001525878906" text="№ Рейса" />
+                        <TableColumn fx:id="airlineTicketColumn" prefWidth="94.4000244140625" text="Авиакомпания" />
+                        <TableColumn fx:id="cityOfDepartureColumn1" prefWidth="91.199951171875" text="Откуда" />
+                        <TableColumn fx:id="cityOfDestinationColumn1" prefWidth="88.79998779296875" text="Куда" />
+                        <TableColumn fx:id="flightDateColumn" prefWidth="92.0" text="Дата рейса" />
+                        <TableColumn fx:id="flightTimeColumn" prefWidth="89.59991455078125" text="Время" />
+                        <TableColumn fx:id="userLastnameColumn" prefWidth="107.1998291015625" text="Фамилия" />
+                        <TableColumn fx:id="dateSaleColumn" prefWidth="96.8001708984375" text="Дата покупки" />
+                     </columns>
                   </TableView>
                </children>
             </Pane>
@@ -475,6 +432,58 @@
                            </font>
                         </Label>
                         <CheckBox fx:id="isBlockedCheckBox" layoutX="214.0" layoutY="317.0" mnemonicParsing="false" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+            <Pane fx:id="addFlightPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-image: url(&quot;https://shen.ua/wp-content/uploads/2019/10/uborka-aeroportov-1.jpg&quot;); -fx-background-size: cover;">
+               <children>
+                  <AnchorPane layoutX="80.0" layoutY="95.0" prefHeight="383.0" prefWidth="623.0" style="-fx-background-color: #fff4be; -fx-border-color: black; -fx-background-radius: 100; -fx-border-radius: 100;">
+                     <children>
+                        <Label layoutX="217.0" layoutY="124.0" text="Откуда">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="236.0" layoutY="160.0" text="Куда">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="160.0" layoutY="230.0" prefHeight="27.0" prefWidth="115.0" text="Время вылета">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="173.0" layoutY="194.0" text="Дата вылета">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="157.0" layoutY="14.0" text="Добавление рейса" underline="true">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="airportOfDepartureChoiceBox" layoutX="299.0" layoutY="125.0" prefHeight="26.0" prefWidth="174.0" />
+                        <Button layoutX="422.0" layoutY="314.0" mnemonicParsing="false" onAction="#addFlightButtonPressed" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: none; -fx-border-color: black; -fx-border-radius: 10;" text="Сохранить" />
+                        <Button layoutX="274.0" layoutY="314.0" mnemonicParsing="false" onAction="#switchToAddAirportView" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: none; -fx-border-color: black; -fx-border-radius: 10;" text="Добавить аэропорт" />
+                        <ChoiceBox fx:id="airportOfDestinationChoiceBox" layoutX="299.0" layoutY="161.0" prefHeight="26.0" prefWidth="174.0" />
+                        <DatePicker fx:id="dateOfDepartureDatePicker" layoutX="299.0" layoutY="195.0" />
+                        <TextField fx:id="timeOfDepartureTextField" layoutX="299.0" layoutY="231.0" prefHeight="26.0" prefWidth="174.0" />
+                        <Label layoutX="188.0" layoutY="265.0" prefHeight="27.0" prefWidth="115.0" text="Стоимость">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="costTextField" layoutX="299.0" layoutY="266.0" prefHeight="26.0" prefWidth="174.0" />
+                        <Label layoutX="156.0" layoutY="89.0" text="Авиакомпания">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="airlineChoiceBox" layoutX="299.0" layoutY="89.0" prefHeight="26.0" prefWidth="174.0" />
+                        <Button layoutX="94.0" layoutY="314.0" mnemonicParsing="false" onAction="#switchToAddAirlineView" prefHeight="39.0" prefWidth="158.0" style="-fx-background-color: none; -fx-border-color: black; -fx-border-radius: 10;" text="Добавить авиакомпанию" />
                      </children>
                   </AnchorPane>
                </children>

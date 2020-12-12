@@ -56,7 +56,8 @@ public class ClientThread implements Runnable {
                     case "add_flight" -> addFlight();
                     case "add_airport" -> addAirport();
                     case "add_city" -> addCity();
-//                    case "add_airline" -> addAirline();
+                    case "add_airline" -> addAirline();
+                    case "add_review" -> addReview();
 
                     case "print_users" -> printUsers();
                     case "print_tickets" -> printTickets();
@@ -64,6 +65,7 @@ public class ClientThread implements Runnable {
                     case "print_airports" -> printAirports();
                     case "print_cities" -> printCities();
                     case "print_airlines" -> printAirlines();
+                    case "print_reviews" -> printReviews();
 
                     case "delete_user" -> deleteUser();
                     case "delete_ticket" -> deleteTicket();
@@ -177,12 +179,6 @@ public class ClientThread implements Runnable {
 
     private void addFlight() throws Exception {
         Flight flight = (Flight) inputStream.readObject();
-
-        System.out.println(flight.getAirportOfDeparture());
-        System.out.println(flight.getAirportOfDestination());
-        System.out.println(flight.getDateOfDeparture());
-        System.out.println(flight.getTimeOfDeparture());
-
         DAO<Flight> daoFlight = new FlightDAO();
         daoFlight.save(flight);
     }
@@ -197,6 +193,18 @@ public class ClientThread implements Runnable {
         City city = (City) inputStream.readObject();
         DAO<City> daoCity = new CityDAO();
         daoCity.save(city);
+    }
+
+    private void addAirline() throws Exception {
+        Airline airline = (Airline) inputStream.readObject();
+        DAO<Airline> daoAirline = new AirlineDAO();
+        daoAirline.save(airline);
+    }
+
+    private void addReview() throws Exception {
+        Review review = (Review) inputStream.readObject();
+        DAO<Review> daoReview = new ReviewDAO();
+        daoReview.save(review);
     }
 
 
@@ -249,6 +257,15 @@ public class ClientThread implements Runnable {
         List<Airline> airlineList = getAirlineList();
         try {
             outputStream.writeObject(airlineList);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void printReviews() {
+        List<Review> reviewList = getReviewList();
+        try {
+            outputStream.writeObject(reviewList);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -350,6 +367,16 @@ public class ClientThread implements Runnable {
 
         if (list == null) {
             list = new ArrayList<Airline>();
+        }
+        return list;
+    }
+
+    public List<Review> getReviewList() {
+        DAO<Review> dao = new ReviewDAO();
+        List<Review> list = dao.getList();
+
+        if (list == null) {
+            list = new ArrayList<Review>();
         }
         return list;
     }

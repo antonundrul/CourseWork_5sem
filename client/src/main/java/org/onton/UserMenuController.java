@@ -37,6 +37,9 @@ public class UserMenuController implements Initializable {
     private Pane flightsPane;
     @FXML
     private Pane ticketsPane;
+    @FXML
+    private Pane reviewPane;
+
 
 
     @FXML
@@ -112,6 +115,10 @@ public class UserMenuController implements Initializable {
     @FXML private Button searchFlightButton;
     @FXML private TextField searchFlightTextField;
 
+    @FXML private Button makeReviewButton;
+    @FXML private Button saveReviewButton;
+    @FXML
+    private TextArea feedbackTextArea ;
 
     @FXML
     public void switchToAuthorization(ActionEvent event) throws IOException {
@@ -121,6 +128,8 @@ public class UserMenuController implements Initializable {
         window.setScene(Client.scene);
         window.show();
     }
+
+
 
     @FXML
     void handleCliks(ActionEvent event) {
@@ -138,6 +147,8 @@ public class UserMenuController implements Initializable {
         } else if (event.getSource() == ticketsPageButton) {
             myTicketsTableInit();
             ticketsPane.toFront();
+        }else if (event.getSource() == makeReviewButton) {
+            reviewPane.toFront();
         }
     }
 
@@ -237,8 +248,7 @@ public class UserMenuController implements Initializable {
         airportCityColumn.setCellValueFactory(new PropertyValueFactory<>("city"));
         airportTableView.setItems(getAirportTableClassObservableList(airportList));
 
-        printTicketInDOCXButton.setVisible(false);
-        removeTicketButton.setVisible(false);
+        makeReviewButton.setVisible(false);
     }
 
     @Override
@@ -255,6 +265,13 @@ public class UserMenuController implements Initializable {
         FlightTableClass flight = flightTableView.getSelectionModel().getSelectedItem();
         if (flight != null) {
             buyTicketButton.setVisible(true);
+        }
+    }
+
+    public void airportTableRowSelected(MouseEvent event) {
+        AirportTableClass airport = airportTableView.getSelectionModel().getSelectedItem();
+        if (airport != null) {
+            makeReviewButton.setVisible(true);
         }
     }
 
@@ -337,6 +354,23 @@ public class UserMenuController implements Initializable {
 
         }
     }
+
+    public void saveReviewButtonPressed(ActionEvent event) throws IOException {
+        AirportTableClass airport = airportTableView.getSelectionModel().getSelectedItem();
+        List<Airport> airportList = getAirportList();
+        for(Airport i : airportList) {
+            if(airport.getId()==i.getId()) {
+                Client.coos.writeObject("add_review");
+                Review review = new Review();
+                review.setFeedback(feedbackTextArea.getText());
+                review.setUser(Client.user);
+                review.setAirport(i);
+                Client.coos.writeObject(review);
+            }
+        }
+        airportsPane.toFront();
+    }
+
 
     @FXML public void switchToPurchaseReceipt(ActionEvent event)throws IOException{
         FXMLLoader loader = new FXMLLoader(Client.class.getResource("purchaseReceipt.fxml"));
@@ -458,6 +492,18 @@ public class UserMenuController implements Initializable {
         try {
             Client.coos.writeObject("print_airlines");
             list = (List<Airline>) Client.cois.readObject();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return list;
+    }
+
+    public List<Review> getReviewList() {
+        List<Review> list = null;
+        try {
+            Client.coos.writeObject("print_reviews");
+            list = (List<Review>) Client.cois.readObject();
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -33,6 +33,7 @@
         <mapping class="org.onton.entity.Airport"/>
         <mapping class="org.onton.entity.City"/>
         <mapping class="org.onton.entity.Airline"/>
+        <mapping class="org.onton.entity.Review"/>
 
     </session-factory>
 

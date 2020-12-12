@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -153,16 +154,6 @@
                      </children>
                   </AnchorPane>
                </children></Pane>
-                <Pane fx:id="airportsPane" prefHeight="603.0" prefWidth="771.0" style="-fx-background-image: url(&quot;https://image.freepik.com/free-photo/sky-cloud-clouds-background_121-69383.jpg&quot;); -fx-background-size: cover;">
-                    <children>
-                        <TableView fx:id="airportTableView" layoutY="42.0" prefHeight="560.0" prefWidth="783.0">
-                            <columns>
-                                <TableColumn fx:id="idAirportColumn" prefWidth="199.19998168945312" text="Идентификационный номер" />
-                                <TableColumn fx:id="airportNameColumn" prefWidth="367.2000427246094" text="Название аэропорта" />
-                                <TableColumn fx:id="airportCityColumn" prefWidth="214.4000244140625" text="Город" />
-                            </columns>
-                        </TableView>
-                    </children></Pane>
                 <Pane fx:id="flightsPane" prefHeight="603.0" prefWidth="733.0" style="-fx-background-image: url(&quot;https://image.freepik.com/free-photo/sky-cloud-clouds-background_121-69383.jpg&quot;); -fx-background-size: cover;">
                     <children>
                         <TableView fx:id="flightTableView" layoutY="42.0" onMouseClicked="#flightTableRowSelected" prefHeight="560.0" prefWidth="783.0">
@@ -218,6 +209,32 @@
                   </Button>
                     </children>
                 </Pane>
+                <Pane fx:id="airportsPane" prefHeight="603.0" prefWidth="771.0" style="-fx-background-image: url(&quot;https://image.freepik.com/free-photo/sky-cloud-clouds-background_121-69383.jpg&quot;); -fx-background-size: cover;">
+                    <children>
+                        <TableView fx:id="airportTableView" layoutY="42.0" onMouseClicked="#airportTableRowSelected" prefHeight="560.0" prefWidth="783.0">
+                            <columns>
+                                <TableColumn fx:id="idAirportColumn" prefWidth="199.19998168945312" text="Идентификационный номер" />
+                                <TableColumn fx:id="airportNameColumn" prefWidth="367.2000427246094" text="Название аэропорта" />
+                                <TableColumn fx:id="airportCityColumn" prefWidth="214.4000244140625" text="Город" />
+                            </columns>
+                        </TableView>
+                  <Button fx:id="makeReviewButton" layoutX="653.0" layoutY="608.0" mnemonicParsing="false" onAction="#handleCliks" prefHeight="30.0" prefWidth="116.0" style="-fx-background-color: none;" text="Оставить отзыв" />
+                    </children></Pane>
+            <Pane fx:id="reviewPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-image: url(&quot;https://image.freepik.com/free-photo/sky-cloud-clouds-background_121-69383.jpg&quot;); -fx-background-size: cover;">
+               <children>
+                  <AnchorPane layoutX="97.0" layoutY="185.0" prefHeight="275.0" prefWidth="589.0" style="-fx-background-color: #fff4be; -fx-background-radius: 50; -fx-border-color: black; -fx-border-radius: 50;">
+                     <children>
+                        <Label layoutX="125.0" layoutY="14.0" text="Отзыв об аэропорте">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="saveReviewButton" layoutX="400.0" layoutY="225.0" mnemonicParsing="false" onAction="#saveReviewButtonPressed" prefHeight="36.0" prefWidth="126.0" style="-fx-background-color: none; -fx-border-color: black; -fx-border-radius: 10;" text="Сохранить" />
+                        <TextArea fx:id="feedbackTextArea" layoutX="96.0" layoutY="79.0" prefHeight="131.0" prefWidth="396.0" promptText="Здесь вы можете оставить свой отзыв" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
             </children>
         </StackPane>
     </children>

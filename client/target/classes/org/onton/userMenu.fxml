@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -153,28 +154,19 @@
                      </children>
                   </AnchorPane>
                </children></Pane>
-                <Pane fx:id="airportsPane" prefHeight="603.0" prefWidth="771.0" style="-fx-background-image: url(&quot;https://image.freepik.com/free-photo/sky-cloud-clouds-background_121-69383.jpg&quot;); -fx-background-size: cover;">
-                    <children>
-                        <TableView fx:id="airportTableView" layoutY="42.0" prefHeight="560.0" prefWidth="783.0">
-                            <columns>
-                                <TableColumn fx:id="idAirportColumn" prefWidth="199.19998168945312" text="Идентификационный номер" />
-                                <TableColumn fx:id="airportNameColumn" prefWidth="367.2000427246094" text="Название аэропорта" />
-                                <TableColumn fx:id="airportCityColumn" prefWidth="214.4000244140625" text="Город" />
-                            </columns>
-                        </TableView>
-                    </children></Pane>
                 <Pane fx:id="flightsPane" prefHeight="603.0" prefWidth="733.0" style="-fx-background-image: url(&quot;https://image.freepik.com/free-photo/sky-cloud-clouds-background_121-69383.jpg&quot;); -fx-background-size: cover;">
                     <children>
                         <TableView fx:id="flightTableView" layoutY="42.0" onMouseClicked="#flightTableRowSelected" prefHeight="560.0" prefWidth="783.0">
                             <columns>
                                 <TableColumn fx:id="idFlightColumn" prefWidth="34.4000244140625" text="№" />
-                                <TableColumn fx:id="cityOfDepartureColumn" prefWidth="77.59999084472656" text="Откуда" />
-                                <TableColumn fx:id="airportOfDepartureColumn" minWidth="0.0" prefWidth="142.39996337890625" text="Аэропорт отправления" />
-                                <TableColumn fx:id="cityOfDestinationColumn" prefWidth="98.4000244140625" text="Куда" />
-                                <TableColumn fx:id="airportOfDestinationColumn" minWidth="0.0" prefWidth="148.0" text="Аэропорт прибытия" />
-                                <TableColumn fx:id="dateColumn" minWidth="0.0" prefWidth="101.5999755859375" text="Дата" />
-                                <TableColumn fx:id="timeColumn" prefWidth="88.0" text="Время" />
-                        <TableColumn fx:id="costColumn" prefWidth="90.4000244140625" text="Цена" />
+                        <TableColumn fx:id="airlineFlightColumn" prefWidth="99.20002746582031" text="Авиакомпания" />
+                                <TableColumn fx:id="cityOfDepartureColumn" prefWidth="88.0" text="Откуда" />
+                                <TableColumn fx:id="airportOfDepartureColumn" minWidth="0.0" prefWidth="143.20001220703125" text="Аэропорт отправления" />
+                                <TableColumn fx:id="cityOfDestinationColumn" prefWidth="64.0" text="Куда" />
+                                <TableColumn fx:id="airportOfDestinationColumn" minWidth="0.0" prefWidth="123.2000732421875" text="Аэропорт прибытия" />
+                                <TableColumn fx:id="dateColumn" minWidth="0.0" prefWidth="88.79998779296875" text="Дата" />
+                                <TableColumn fx:id="timeColumn" prefWidth="67.2000732421875" text="Время" />
+                        <TableColumn fx:id="costColumn" prefWidth="71.199951171875" text="Цена" />
                             </columns>
                         </TableView>
                   <Button fx:id="buyTicketButton" layoutX="631.0" layoutY="607.0" mnemonicParsing="false" onAction="#buyTicketButtonPressed" prefHeight="30.0" prefWidth="138.0" style="-fx-background-color: none;" text="Купить билет">
@@ -194,14 +186,15 @@
                     <children>
                         <TableView fx:id="ticketsTableView" layoutY="42.0" onMouseClicked="#ticketsTableRowSelected" prefHeight="560.0" prefWidth="783.0">
                             <columns>
-                                <TableColumn fx:id="idTicketColumn" prefWidth="65.59994506835938" text="№ Билета" />
-                                <TableColumn fx:id="idFlightColumn1" prefWidth="57.60005187988281" text="№ Рейса" />
-                                <TableColumn fx:id="cityOfDepartureColumn1" prefWidth="96.800048828125" text="Откуда" />
-                                <TableColumn fx:id="cityOfDestinationColumn1" prefWidth="110.39996337890625" text="Куда" />
-                                <TableColumn fx:id="flightDateColumn" prefWidth="103.199951171875" text="Дата рейса" />
-                                <TableColumn fx:id="flightTimeColumn" prefWidth="100.800048828125" text="Время" />
-                                <TableColumn fx:id="userLastnameColumn" prefWidth="111.20001220703125" text="Фамилия" />
-                                <TableColumn fx:id="dateSaleColumn" prefWidth="133.39996337890625" text="Дата покупки билета" />
+                                <TableColumn fx:id="idTicketColumn" prefWidth="64.80001831054688" text="№ Билета" />
+                                <TableColumn fx:id="idFlightColumn1" prefWidth="56.00001525878906" text="№ Рейса" />
+                        <TableColumn fx:id="airlineTicketColumn" prefWidth="94.4000244140625" text="Авиакомпания" />
+                                <TableColumn fx:id="cityOfDepartureColumn1" prefWidth="91.199951171875" text="Откуда" />
+                                <TableColumn fx:id="cityOfDestinationColumn1" prefWidth="88.79998779296875" text="Куда" />
+                                <TableColumn fx:id="flightDateColumn" prefWidth="92.0" text="Дата рейса" />
+                                <TableColumn fx:id="flightTimeColumn" prefWidth="89.59991455078125" text="Время" />
+                                <TableColumn fx:id="userLastnameColumn" prefWidth="107.1998291015625" text="Фамилия" />
+                                <TableColumn fx:id="dateSaleColumn" prefWidth="96.8001708984375" text="Дата покупки" />
                             </columns>
                         </TableView>
                   <Button fx:id="printTicketInDOCXButton" layoutX="630.0" layoutY="608.0" mnemonicParsing="false" onAction="#printTicketInDOCXButtonPressed" prefHeight="30.0" prefWidth="139.0" style="-fx-background-color: none;" text="Распечатать билет">
@@ -216,6 +209,32 @@
                   </Button>
                     </children>
                 </Pane>
+                <Pane fx:id="airportsPane" prefHeight="603.0" prefWidth="771.0" style="-fx-background-image: url(&quot;https://image.freepik.com/free-photo/sky-cloud-clouds-background_121-69383.jpg&quot;); -fx-background-size: cover;">
+                    <children>
+                        <TableView fx:id="airportTableView" layoutY="42.0" onMouseClicked="#airportTableRowSelected" prefHeight="560.0" prefWidth="783.0">
+                            <columns>
+                                <TableColumn fx:id="idAirportColumn" prefWidth="199.19998168945312" text="Идентификационный номер" />
+                                <TableColumn fx:id="airportNameColumn" prefWidth="367.2000427246094" text="Название аэропорта" />
+                                <TableColumn fx:id="airportCityColumn" prefWidth="214.4000244140625" text="Город" />
+                            </columns>
+                        </TableView>
+                  <Button fx:id="makeReviewButton" layoutX="653.0" layoutY="608.0" mnemonicParsing="false" onAction="#handleCliks" prefHeight="30.0" prefWidth="116.0" style="-fx-background-color: none;" text="Оставить отзыв" />
+                    </children></Pane>
+            <Pane fx:id="reviewPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-image: url(&quot;https://image.freepik.com/free-photo/sky-cloud-clouds-background_121-69383.jpg&quot;); -fx-background-size: cover;">
+               <children>
+                  <AnchorPane layoutX="97.0" layoutY="185.0" prefHeight="275.0" prefWidth="589.0" style="-fx-background-color: #fff4be; -fx-background-radius: 50; -fx-border-color: black; -fx-border-radius: 50;">
+                     <children>
+                        <Label layoutX="125.0" layoutY="14.0" text="Отзыв об аэропорте">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="saveReviewButton" layoutX="400.0" layoutY="225.0" mnemonicParsing="false" onAction="#saveReviewButtonPressed" prefHeight="36.0" prefWidth="126.0" style="-fx-background-color: none; -fx-border-color: black; -fx-border-radius: 10;" text="Сохранить" />
+                        <TextArea fx:id="feedbackTextArea" layoutX="96.0" layoutY="79.0" prefHeight="131.0" prefWidth="396.0" promptText="Здесь вы можете оставить свой отзыв" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
             </children>
         </StackPane>
     </children>

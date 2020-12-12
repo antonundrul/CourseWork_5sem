@@ -69,6 +69,7 @@ public class AdminMenuController implements Initializable {
 
     @FXML private TableView<FlightTableClass> flightTableView;
     @FXML private TableColumn<FlightTableClass, Integer> idFlightColumn;
+    @FXML private TableColumn<FlightTableClass, String> airlineFlightColumn;
     @FXML private TableColumn<FlightTableClass, String> cityOfDepartureColumn;
     @FXML private TableColumn<FlightTableClass, String> airportOfDepartureColumn;
     @FXML private TableColumn<FlightTableClass, String> cityOfDestinationColumn;
@@ -85,6 +86,7 @@ public class AdminMenuController implements Initializable {
     @FXML private TableView<TicketTableClass> ticketsTableView;
     @FXML private TableColumn<TicketTableClass, Integer> idTicketColumn;
     @FXML private TableColumn<TicketTableClass, Integer> idFlightColumn1;
+    @FXML private TableColumn<TicketTableClass, String> airlineTicketColumn;
     @FXML private TableColumn<TicketTableClass, String> cityOfDepartureColumn1;
     @FXML private TableColumn<TicketTableClass, String> cityOfDestinationColumn1;
     @FXML private TableColumn<TicketTableClass, LocalDate> flightDateColumn;
@@ -94,6 +96,7 @@ public class AdminMenuController implements Initializable {
 
     @FXML private ChoiceBox<Airport> airportOfDepartureChoiceBox;
     @FXML private ChoiceBox<Airport> airportOfDestinationChoiceBox;
+    @FXML private ChoiceBox<Airline> airlineChoiceBox;
     @FXML private DatePicker dateOfDepartureDatePicker;
     @FXML private TextField timeOfDepartureTextField;
     @FXML private TextField costTextField;
@@ -132,6 +135,15 @@ public class AdminMenuController implements Initializable {
         Stage window = (Stage) Client.scene.getWindow();
         window.setTitle("Добавление аэропорта");
         Client.setRoot("addAirportView");
+        window.setScene(Client.scene);
+        window.show();
+    }
+
+    @FXML
+    public void switchToAddAirlineView(ActionEvent event) throws IOException {
+        Stage window = (Stage) Client.scene.getWindow();
+        window.setTitle("Добавление авиакомпании");
+        Client.setRoot("addAirlineView");
         window.setScene(Client.scene);
         window.show();
     }
@@ -275,6 +287,7 @@ public class AdminMenuController implements Initializable {
 
     public void flightTableInit() {
         idFlightColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        airlineFlightColumn.setCellValueFactory(new PropertyValueFactory<>("airline"));
         cityOfDepartureColumn.setCellValueFactory(new PropertyValueFactory<>("cityOfDeparture"));
         airportOfDepartureColumn.setCellValueFactory(new PropertyValueFactory<>("airportOfDeparture"));
         cityOfDestinationColumn.setCellValueFactory(new PropertyValueFactory<>("cityOfDestination"));
@@ -299,6 +312,7 @@ public class AdminMenuController implements Initializable {
     public void ticketTableInit() {
         idTicketColumn.setCellValueFactory(new PropertyValueFactory<>("idTicket"));
         idFlightColumn1.setCellValueFactory(new PropertyValueFactory<>("idFlight"));
+        airlineTicketColumn.setCellValueFactory(new PropertyValueFactory<>("airline"));
         cityOfDepartureColumn1.setCellValueFactory(new PropertyValueFactory<>("cityOfDeparture"));
         cityOfDestinationColumn1.setCellValueFactory(new PropertyValueFactory<>("cityOfDestination"));
         flightDateColumn.setCellValueFactory(new PropertyValueFactory<>("dateOfFlight"));
@@ -340,6 +354,8 @@ public class AdminMenuController implements Initializable {
 
         airportOfDepartureChoiceBox.setItems(getAirportObservableList());
         airportOfDestinationChoiceBox.setItems(getAirportObservableList());
+        airlineChoiceBox.setItems(getAirlineObservableList());
+
     }
 
 
@@ -382,6 +398,7 @@ public class AdminMenuController implements Initializable {
         Client.coos.writeObject("add_flight");
         Flight flight = new Flight();
 
+        flight.setAirline(airlineChoiceBox.getValue());
         flight.setAirportOfDeparture(airportOfDepartureChoiceBox.getValue());
         flight.setAirportOfDestination(airportOfDestinationChoiceBox.getValue());
         flight.setDateOfDeparture(dateOfDepartureDatePicker.getValue());
@@ -543,6 +560,7 @@ public class AdminMenuController implements Initializable {
                 list.add(flightTableClass);
 
                 list.get(i).setId(flightList.get(i).getId());
+                list.get(i).setAirline(flightList.get(i).getAirline().getName());
                 list.get(i).setCityOfDeparture(flightList.get(i).getAirportOfDeparture().getCity().getName());
                 list.get(i).setAirportOfDeparture(flightList.get(i).getAirportOfDeparture().getName());
                 list.get(i).setCityOfDestination(flightList.get(i).getAirportOfDestination().getCity().getName());
@@ -577,6 +595,23 @@ public class AdminMenuController implements Initializable {
     public ObservableList<Airport> getAirportObservableList() {
         List<Airport> airportList = getAirportList();
         return FXCollections.observableList(airportList);
+    }
+
+    public ObservableList<Airline> getAirlineObservableList() {
+        List<Airline> airlineList = getAirlineList();
+        return FXCollections.observableList(airlineList);
+    }
+
+    public List<Airline> getAirlineList() {
+        List<Airline> list = null;
+        try {
+            Client.coos.writeObject("print_airlines");
+            list = (List<Airline>) Client.cois.readObject();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return list;
     }
 
     public ObservableList<AirportTableClass> getAirportTableClassObservableList() {
@@ -621,6 +656,7 @@ public class AdminMenuController implements Initializable {
 
                 list.get(i).setIdTicket(ticketList.get(i).getId());
                 list.get(i).setIdFlight(ticketList.get(i).getFlight().getId());
+                list.get(i).setAirline(ticketList.get(i).getFlight().getAirline().getName());
                 list.get(i).setCityOfDeparture(ticketList.get(i).getFlight().getAirportOfDeparture().getCity().getName());
                 list.get(i).setCityOfDestination(ticketList.get(i).getFlight().getAirportOfDestination().getCity().getName());
                 list.get(i).setDateOfFlight(ticketList.get(i).getFlight().getDateOfDeparture());
