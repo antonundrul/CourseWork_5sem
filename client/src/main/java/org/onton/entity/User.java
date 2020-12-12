@@ -13,6 +13,7 @@ public class User implements Serializable {
     private String passportSeries;
     private String passportNumber;
     private int balance;
+    private Boolean isBlocked;
 
 
     public int getId() {
@@ -93,5 +94,13 @@ public class User implements Serializable {
 
     public void setBalance(int balance) {
         this.balance = balance;
+    }
+
+    public Boolean getBlocked() {
+        return isBlocked;
+    }
+
+    public void setBlocked(Boolean blocked) {
+        isBlocked = blocked;
     }
 }

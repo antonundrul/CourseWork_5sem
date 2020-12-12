@@ -63,7 +63,10 @@ public class AuthorizationController {
             } else {
                 switchToUserMenu();
             }
-        }else {
+        }else if(msg.equals("Данный пользователь заблокирован")){
+            userBlockedView();
+        }
+        else {
             loginFailedView();
         }
     }
@@ -88,6 +91,14 @@ public class AuthorizationController {
         Stage window = (Stage) Client.scene.getWindow();
         window.setTitle("Ошибка входа");
         Client.setRoot("loginFailedView");
+        window.setScene(Client.scene);
+        window.show();
+    }
+
+    @FXML public void userBlockedView() throws IOException {
+        Stage window = (Stage) Client.scene.getWindow();
+        window.setTitle("Пользователь заблокирован");
+        Client.setRoot("userBlockView");
         window.setScene(Client.scene);
         window.show();
     }

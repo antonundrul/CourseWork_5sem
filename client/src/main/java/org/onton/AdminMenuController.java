@@ -104,45 +104,27 @@ public class AdminMenuController implements Initializable {
 
 
 
-    @FXML
-    private TextField mailProfileTextField;
-    @FXML
-    private TextField passwordProfileTextField;
-    @FXML
-    private TextField lastnameProfileTextField;
-    @FXML
-    private TextField firstnameProfileTextField;
-    @FXML
-    private TextField middlenameProfileTextField;
-    @FXML
-    private TextField passportSeriesProfileTextField;
-    @FXML
-    private TextField passportNumberProfileTextField;
-    @FXML
-    private Button editProfileButton;
-    @FXML
-    private Button saveProfileButton;
+    @FXML private TextField mailProfileTextField;
+    @FXML private TextField passwordProfileTextField;
+    @FXML private TextField lastnameProfileTextField;
+    @FXML private TextField firstnameProfileTextField;
+    @FXML private TextField middlenameProfileTextField;
+    @FXML private TextField passportSeriesProfileTextField;
+    @FXML private TextField passportNumberProfileTextField;
+    @FXML private Button editProfileButton;
+    @FXML private Button saveProfileButton;
 
-    @FXML
-    private TextField mailUserTextField;
-    @FXML
-    private TextField passwordUserTextField;
-    @FXML
-    private TextField lastnameUserTextField;
-    @FXML
-    private TextField firstnameUserTextField;
-    @FXML
-    private TextField middlenameUserTextField;
-    @FXML
-    private TextField passportSeriesUserTextField;
-    @FXML
-    private TextField passportNumberUserTextField;
-    @FXML
-    private CheckBox isAdminCheckBox;
-    @FXML
-    private Button editUserButton;
-    @FXML
-    private Button saveUserButton;
+    @FXML private TextField mailUserTextField;
+    @FXML private TextField passwordUserTextField;
+    @FXML private TextField lastnameUserTextField;
+    @FXML private TextField firstnameUserTextField;
+    @FXML private TextField middlenameUserTextField;
+    @FXML private TextField passportSeriesUserTextField;
+    @FXML private TextField passportNumberUserTextField;
+    @FXML private CheckBox isAdminCheckBox;
+    @FXML private CheckBox isBlockedCheckBox;
+    @FXML private Button editUserButton;
+    @FXML private Button saveUserButton;
 
 
     @FXML
@@ -204,6 +186,7 @@ public class AdminMenuController implements Initializable {
         passportSeriesUserTextField.setText(user.getPassportSeries());
         passportNumberUserTextField.setText(user.getPassportNumber());
         isAdminCheckBox.setSelected(user.getAdmin());
+        isBlockedCheckBox.setSelected(user.getBlocked());
 
         mailUserTextField.setEditable(false);
         passwordUserTextField.setEditable(false);
@@ -213,6 +196,7 @@ public class AdminMenuController implements Initializable {
         passportSeriesUserTextField.setEditable(false);
         passportNumberUserTextField.setEditable(false);
         isAdminCheckBox.setDisable(true);
+        isBlockedCheckBox.setDisable(true);
 
         saveUserButton.setVisible(false);
     }
@@ -226,6 +210,10 @@ public class AdminMenuController implements Initializable {
         passportSeriesUserTextField.setEditable(true);
         passportNumberUserTextField.setEditable(true);
         isAdminCheckBox.setDisable(false);
+
+        if(!isAdminCheckBox.isSelected()){
+            isBlockedCheckBox.setDisable(false);
+        }
 
         saveUserButton.setVisible(true);
 
@@ -241,6 +229,16 @@ public class AdminMenuController implements Initializable {
         user.setPassportSeries(passportSeriesUserTextField.getText());
         user.setPassportNumber(passportNumberUserTextField.getText());
         user.setAdmin(isAdminCheckBox.isSelected());
+
+        if(isAdminCheckBox.isSelected()){
+            isBlockedCheckBox.setSelected(false);
+            isBlockedCheckBox.setDisable(true);
+            user.setBlocked(isBlockedCheckBox.isSelected());
+        }
+        else{
+            user.setBlocked(isBlockedCheckBox.isSelected());
+        }
+//        user.setBlocked(isBlockedCheckBox.isSelected());
 
         Client.coos.writeObject("edit_profile");
         Client.coos.writeObject(user);

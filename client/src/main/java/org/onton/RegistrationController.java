@@ -49,6 +49,8 @@ public class RegistrationController {
         user.setMiddleName(middleNameField.getText());
         user.setPassportSeries(passportSeriesField.getText());
         user.setPassportNumber(passportNumberField.getText());
+        user.setBalance(0);
+        user.setBlocked(false);
 
         System.out.println(user.getFirstName());
         System.out.println(user.getLastName());

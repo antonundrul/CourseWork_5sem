@@ -50,6 +50,10 @@ public class User implements Serializable {
     @Column(name = "balance")
     private int balance;
 
+    @NotNull
+    @Column(name = "isBlocked")
+    private Boolean isBlocked;
+
     public User() {
     }
 
@@ -131,5 +135,14 @@ public class User implements Serializable {
 
     public void setBalance(int balance) {
         this.balance = balance;
+    }
+
+
+    public Boolean getBlocked() {
+        return isBlocked;
+    }
+
+    public void setBlocked(Boolean blocked) {
+        isBlocked = blocked;
     }
 }

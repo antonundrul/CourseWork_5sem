@@ -121,6 +121,9 @@ public class ClientThread implements Runnable {
                 if (password.equals(userList.get(i).getPassword())) {
                     user = userList.get(i);
                     msg = "Успешная авторизация";
+                    if(userList.get(i).getBlocked()){
+                        msg = "Данный пользователь заблокирован";
+                    }
                 } else {
                     msg = "Неверно введен пароль";
                 }
@@ -133,6 +136,8 @@ public class ClientThread implements Runnable {
             outputStream.writeObject(msg);
             outputStream.writeObject(user);
         }else if(msg.equals("Неверно введен пароль")){
+            outputStream.writeObject(msg);
+        }else if(msg.equals("Данный пользователь заблокирован")){
             outputStream.writeObject(msg);
         }
 
