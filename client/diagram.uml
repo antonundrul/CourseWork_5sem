@@ -3,36 +3,343 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="0.0" y="75.0">org.onton.PassengerInfoViewController</node>
-    <node x="309.0" y="75.0">org.onton.LoginFailedViewController</node>
-    <node x="0.0" y="375.0">org.onton.UsersDiagramController</node>
-    <node x="572.0" y="600.0">org.onton.entity.User</node>
-    <node x="261.0" y="450.0">org.onton.AdminMenuController</node>
-    <node x="285.0" y="225.0">org.onton.PrintFullInfoController</node>
-    <node x="0.0" y="300.0">org.onton.AuthorizationController</node>
-    <node x="0.0" y="450.0">org.onton.AddCityViewController</node>
-    <node x="149.0" y="600.0">org.onton.entity.Ticket</node>
-    <node x="0.0" y="525.0">org.onton.entity.AirportTableClass</node>
-    <node x="293.0" y="150.0">org.onton.AddAirportViewController</node>
-    <node x="0.0" y="600.0">org.onton.entity.Airport</node>
-    <node x="290.0" y="600.0">org.onton.entity.Flight</node>
-    <node x="0.0" y="225.0">org.onton.AirportDiagramController</node>
-    <node x="0.0" y="0.0">org.onton.RegistrationFailedViewController</node>
-    <node x="728.75" y="570.0">org.onton.entity.City</node>
-    <node x="229.0" y="525.0">org.onton.entity.FlightTableClass</node>
-    <node x="506.0" y="450.0">org.onton.UserMenuController</node>
-    <node x="349.0" y="0.0">org.onton.PurchaseFailedViewController</node>
-    <node x="269.0" y="375.0">org.onton.RegistrationController</node>
-    <node x="0.0" y="150.0">org.onton.PurchaseReceiptController</node>
-    <node x="431.0" y="600.0">org.onton.Client</node>
-    <node x="277.0" y="300.0">org.onton.CitiesDiagramController</node>
-    <node x="450.0" y="525.0">org.onton.entity.TicketTableClass</node>
+    <node x="1260.155462184874" y="730.0">org.onton.PassengerInfoViewController</node>
+    <node x="2064.155462184874" y="730.0">org.onton.UsersDiagramController</node>
+    <node x="1796.155462184874" y="730.0">org.onton.LoginFailedViewController</node>
+    <node x="1468.369663016723" y="210.0">org.onton.entity.User</node>
+    <node x="444.4273136993736" y="730.0">org.onton.AdminMenuController</node>
+    <node x="2552.155462184874" y="730.0">org.onton.PrintFullInfoController</node>
+    <node x="1544.155462184874" y="730.0">org.onton.AuthorizationController</node>
+    <node x="3388.155462184874" y="730.0">org.onton.AddCityViewController</node>
+    <node x="827.4054621848741" y="370.0">org.onton.entity.Ticket</node>
+    <node x="58.0601392071992" y="370.0">org.onton.entity.AirportTableClass</node>
+    <node x="3128.155462184874" y="730.0">org.onton.AddAirportViewController</node>
+    <node x="688.5701708422307" y="100.0">org.onton.entity.Airport</node>
+    <node x="748.1554621848741" y="730.0">org.onton.AirportDiagramController</node>
+    <node x="791.4054621848741" y="210.0">org.onton.entity.Flight</node>
+    <node x="2804.155462184874" y="730.0">org.onton.RegistrationFailedViewController</node>
+    <node x="2188.655462184874" y="0.0">org.onton.entity.City</node>
+    <node x="458.0601392071992" y="370.0">org.onton.entity.FlightTableClass</node>
+    <node x="172.53709852239376" y="730.0">org.onton.UserMenuController</node>
+    <node x="0.0" y="805.0">org.onton.PurchaseFailedViewController</node>
+    <node x="2308.155462184874" y="730.0">org.onton.RegistrationController</node>
+    <node x="1924.2652470078942" y="370.0">org.onton.Client</node>
+    <node x="317.0" y="805.0">org.onton.PurchaseReceiptController</node>
+    <node x="1008.1554621848741" y="730.0">org.onton.CitiesDiagramController</node>
+    <node x="262.0601392071992" y="370.0">org.onton.entity.TicketTableClass</node>
   </nodes>
   <notes />
-  <edges />
-  <settings layout="Hierarchic Group" zoom="0.8" x="655.0" y="316.7142857142859" />
+  <edges>
+    <edge source="org.onton.AdminMenuController" target="org.onton.entity.TicketTableClass">
+      <point x="-58.823529411764696" y="-15.0" />
+      <point x="485.60378428760896" y="440.0" />
+      <point x="364.72680587386594" y="440.0" />
+      <point x="14.666666666666629" y="15.0" />
+    </edge>
+    <edge source="org.onton.UserMenuController" target="org.onton.entity.TicketTableClass">
+      <point x="-6.857142857142833" y="-15.0" />
+      <point x="261.6799556652509" y="480.0" />
+      <point x="276.72680587386594" y="480.0" />
+      <point x="-73.33333333333331" y="15.0" />
+    </edge>
+    <edge source="org.onton.CitiesDiagramController" target="org.onton.entity.City">
+      <point x="0.0" y="-15.0" />
+      <point x="1124.155462184874" y="80.0" />
+      <point x="2223.655462184874" y="80.0" />
+      <point x="-5.0" y="15.0" />
+    </edge>
+    <edge source="org.onton.entity.Airport" target="org.onton.entity.City">
+      <point x="-26.0" y="-15.0" />
+      <point x="714.5701708422307" y="60.0" />
+      <point x="2203.655462184874" y="60.0" />
+      <point x="-25.0" y="15.0" />
+    </edge>
+    <edge source="org.onton.entity.Flight" target="org.onton.entity.Airport">
+      <point x="-24.0" y="-15.0" />
+      <point x="815.4054621848741" y="180.0" />
+      <point x="747.0701708422307" y="180.0" />
+      <point x="6.5" y="15.0" />
+    </edge>
+    <edge source="org.onton.AdminMenuController" target="org.onton.entity.Flight">
+      <point x="47.05882352941171" y="-15.0" />
+      <point x="591.4861372287853" y="600.0" />
+      <point x="705.9137806637818" y="600.0" />
+      <point x="705.9137806637818" y="290.0" />
+      <point x="825.6911764705884" y="290.0" />
+      <point x="-13.714285714285666" y="15.0" />
+    </edge>
+    <edge source="org.onton.LoginFailedViewController" target="org.onton.Client">
+      <point x="0.0" y="-15.0" />
+      <point x="1920.155462184874" y="710.0" />
+      <point x="1972.2652470078942" y="710.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.onton.UsersDiagramController" target="org.onton.entity.Ticket">
+      <point x="-74.66666666666674" y="-15.0" />
+      <point x="2101.4887955182076" y="630.0" />
+      <point x="913.805462184874" y="630.0" />
+      <point x="38.39999999999998" y="15.0" />
+    </edge>
+    <edge source="org.onton.UserMenuController" target="org.onton.entity.AirportTableClass">
+      <point x="-48.0" y="-15.0" />
+      <point x="220.53709852239376" y="680.0" />
+      <point x="73.39347254053246" y="680.0" />
+      <point x="-76.66666666666669" y="15.0" />
+    </edge>
+    <edge source="org.onton.AddAirportViewController" target="org.onton.entity.Airport">
+      <point x="0.0" y="-15.0" />
+      <point x="3248.155462184874" y="710.0" />
+      <point x="3266.655462184874" y="710.0" />
+      <point x="3266.655462184874" y="150.0" />
+      <point x="786.0701708422307" y="150.0" />
+      <point x="45.5" y="15.0" />
+    </edge>
+    <edge source="org.onton.AddAirportViewController" target="org.onton.entity.City">
+      <point x="96.0" y="-15.0" />
+      <point x="3344.155462184874" y="710.0" />
+      <point x="3331.4273136993734" y="710.0" />
+      <point x="3331.4273136993734" y="70.0" />
+      <point x="2243.655462184874" y="70.0" />
+      <point x="15.0" y="15.0" />
+    </edge>
+    <edge source="org.onton.PrintFullInfoController" target="org.onton.entity.Flight">
+      <point x="0.0" y="-15.0" />
+      <point x="2668.155462184874" y="710.0" />
+      <point x="2725.7029963500563" y="710.0" />
+      <point x="2725.7029963500563" y="270.0" />
+      <point x="880.5483193277312" y="270.0" />
+      <point x="41.14285714285711" y="15.0" />
+    </edge>
+    <edge source="org.onton.AuthorizationController" target="org.onton.Client">
+      <point x="58.0" y="-15.0" />
+      <point x="1718.155462184874" y="700.0" />
+      <point x="1964.8806316232785" y="700.0" />
+      <point x="-7.384615384615472" y="15.0" />
+    </edge>
+    <edge source="org.onton.AdminMenuController" target="org.onton.entity.FlightTableClass">
+      <point x="-23.529411764705856" y="-15.0" />
+      <point x="520.8979019346677" y="540.0" />
+      <point x="560.7268058738659" y="540.0" />
+      <point x="14.666666666666657" y="15.0" />
+    </edge>
+    <edge source="org.onton.UserMenuController" target="org.onton.entity.FlightTableClass">
+      <point x="34.28571428571428" y="-15.0" />
+      <point x="302.822812808108" y="510.0" />
+      <point x="472.72680587386594" y="510.0" />
+      <point x="-73.33333333333333" y="15.0" />
+    </edge>
+    <edge source="org.onton.AdminMenuController" target="org.onton.entity.Airport">
+      <point x="11.764705882352928" y="-15.0" />
+      <point x="556.1920195817265" y="570.0" />
+      <point x="672.9137806637818" y="570.0" />
+      <point x="672.9137806637818" y="180.0" />
+      <point x="708.0701708422307" y="180.0" />
+      <point x="-32.5" y="15.0" />
+    </edge>
+    <edge source="org.onton.entity.Ticket" target="org.onton.entity.User">
+      <point x="12.0" y="-15.0" />
+      <point x="887.4054621848741" y="320.0" />
+      <point x="1485.0363296833898" y="320.0" />
+      <point x="-23.333333333333258" y="15.0" />
+    </edge>
+    <edge source="org.onton.CitiesDiagramController" target="org.onton.entity.Ticket">
+      <point x="-77.33333333333326" y="-15.0" />
+      <point x="1046.8221288515408" y="640.0" />
+      <point x="894.6054621848741" y="640.0" />
+      <point x="19.200000000000045" y="15.0" />
+    </edge>
+    <edge source="org.onton.entity.Ticket" target="org.onton.entity.Flight">
+      <point x="-36.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.onton.UserMenuController" target="org.onton.Client">
+      <point x="89.14285714285711" y="-15.0" />
+      <point x="357.6799556652509" y="650.0" />
+      <point x="1927.9575547002019" y="650.0" />
+      <point x="-44.30769230769238" y="15.0" />
+    </edge>
+    <edge source="org.onton.AdminMenuController" target="org.onton.entity.AirportTableClass">
+      <point x="-94.11764705882348" y="-15.0" />
+      <point x="450.3096666405502" y="470.0" />
+      <point x="165.39347254053246" y="470.0" />
+      <point x="15.333333333333371" y="15.0" />
+    </edge>
+    <edge source="org.onton.UserMenuController" target="org.onton.entity.Flight">
+      <point x="-61.71428571428578" y="-15.0" />
+      <point x="206.82281280810798" y="690.0" />
+      <point x="22.0" y="690.0" />
+      <point x="22.0" y="270.0" />
+      <point x="798.262605042017" y="270.0" />
+      <point x="-41.14285714285711" y="15.0" />
+    </edge>
+    <edge source="org.onton.AirportDiagramController" target="org.onton.Client">
+      <point x="80.0" y="-15.0" />
+      <point x="948.1554621848741" y="670.0" />
+      <point x="1942.7267854694328" y="670.0" />
+      <point x="-29.538461538461434" y="15.0" />
+    </edge>
+    <edge source="org.onton.UserMenuController" target="org.onton.entity.Airport">
+      <point x="-75.42857142857133" y="-15.0" />
+      <point x="193.10852709382243" y="700.0" />
+      <point x="11.0" y="700.0" />
+      <point x="11.0" y="170.0" />
+      <point x="695.0701708422307" y="170.0" />
+      <point x="-45.5" y="15.0" />
+    </edge>
+    <edge source="org.onton.AdminMenuController" target="org.onton.entity.Ticket">
+      <point x="82.35294117647061" y="-15.0" />
+      <point x="626.7802548758441" y="640.0" />
+      <point x="856.205462184874" y="640.0" />
+      <point x="-19.200000000000045" y="15.0" />
+    </edge>
+    <edge source="org.onton.AirportDiagramController" target="org.onton.entity.Airport">
+      <point x="-80.0" y="-15.0" />
+      <point x="788.1554621848741" y="620.0" />
+      <point x="770.869663016723" y="620.0" />
+      <point x="770.869663016723" y="190.0" />
+      <point x="734.0701708422307" y="190.0" />
+      <point x="-6.5" y="15.0" />
+    </edge>
+    <edge source="org.onton.RegistrationController" target="org.onton.entity.User">
+      <point x="74.66666666666652" y="-15.0" />
+      <point x="2494.8221288515406" y="710.0" />
+      <point x="2487.369663016723" y="710.0" />
+      <point x="2487.369663016723" y="310.0" />
+      <point x="1538.369663016723" y="310.0" />
+      <point x="30.0" y="15.0" />
+    </edge>
+    <edge source="org.onton.RegistrationFailedViewController" target="org.onton.Client">
+      <point x="0.0" y="-15.0" />
+      <point x="2956.155462184874" y="590.0" />
+      <point x="2001.8037085463557" y="590.0" />
+      <point x="29.538461538461434" y="15.0" />
+    </edge>
+    <edge source="org.onton.AddCityViewController" target="org.onton.Client">
+      <point x="-72.0" y="-15.0" />
+      <point x="3424.155462184874" y="570.0" />
+      <point x="2016.5729393155866" y="570.0" />
+      <point x="44.30769230769238" y="15.0" />
+    </edge>
+    <edge source="org.onton.PrintFullInfoController" target="org.onton.Client">
+      <point x="-77.33333333333326" y="-15.0" />
+      <point x="2590.8221288515406" y="600.0" />
+      <point x="1994.4190931617404" y="600.0" />
+      <point x="22.15384615384619" y="15.0" />
+    </edge>
+    <edge source="org.onton.AirportDiagramController" target="org.onton.entity.Ticket">
+      <point x="0.0" y="-15.0" />
+      <point x="868.1554621848741" y="640.0" />
+      <point x="875.4054621848741" y="640.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.onton.RegistrationController" target="org.onton.Client">
+      <point x="-74.66666666666652" y="-15.0" />
+      <point x="2345.4887955182076" y="610.0" />
+      <point x="1987.0344777771247" y="610.0" />
+      <point x="14.769230769230717" y="15.0" />
+    </edge>
+    <edge source="org.onton.AdminMenuController" target="org.onton.Client">
+      <point x="94.11764705882354" y="-15.0" />
+      <point x="638.5449607581972" y="660.0" />
+      <point x="1935.342170084817" y="660.0" />
+      <point x="-36.923076923076906" y="15.0" />
+    </edge>
+    <edge source="org.onton.AuthorizationController" target="org.onton.entity.User">
+      <point x="-58.0" y="-15.0" />
+      <point x="1602.155462184874" y="350.0" />
+      <point x="1511.7029963500563" y="350.0" />
+      <point x="3.3333333333332575" y="15.0" />
+    </edge>
+    <edge source="org.onton.Client" target="org.onton.entity.User">
+      <point x="0.0" y="-15.0" />
+      <point x="1972.2652470078942" y="340.0" />
+      <point x="1518.369663016723" y="340.0" />
+      <point x="10.0" y="15.0" />
+    </edge>
+    <edge source="org.onton.AdminMenuController" target="org.onton.entity.User">
+      <point x="58.82352941176464" y="-15.0" />
+      <point x="603.2508431111382" y="610.0" />
+      <point x="716.9137806637818" y="610.0" />
+      <point x="716.9137806637818" y="300.0" />
+      <point x="1471.7029963500563" y="300.0" />
+      <point x="-36.66666666666674" y="15.0" />
+    </edge>
+    <edge source="org.onton.UserMenuController" target="org.onton.entity.Ticket">
+      <point x="75.42857142857144" y="-15.0" />
+      <point x="343.9656699509651" y="630.0" />
+      <point x="837.0054621848741" y="630.0" />
+      <point x="-38.39999999999998" y="15.0" />
+    </edge>
+    <edge source="org.onton.UsersDiagramController" target="org.onton.entity.User">
+      <point x="74.66666666666674" y="-15.0" />
+      <point x="2250.8221288515406" y="330.0" />
+      <point x="1525.0363296833898" y="330.0" />
+      <point x="16.666666666666742" y="15.0" />
+    </edge>
+    <edge source="org.onton.CitiesDiagramController" target="org.onton.Client">
+      <point x="77.33333333333326" y="-15.0" />
+      <point x="1201.4887955182073" y="680.0" />
+      <point x="1950.111400854048" y="680.0" />
+      <point x="-22.15384615384619" y="15.0" />
+    </edge>
+    <edge source="org.onton.PassengerInfoViewController" target="org.onton.entity.Flight">
+      <point x="-99.0" y="-15.0" />
+      <point x="1292.156231023878" y="280.0" />
+      <point x="866.8340336134455" y="280.0" />
+      <point x="27.428571428571445" y="15.0" />
+    </edge>
+    <edge source="org.onton.PrintFullInfoController" target="org.onton.entity.User">
+      <point x="77.33333333333326" y="-15.0" />
+      <point x="2745.4887955182076" y="710.0" />
+      <point x="2736.7029963500563" y="710.0" />
+      <point x="2736.7029963500563" y="260.0" />
+      <point x="1545.0363296833898" y="260.0" />
+      <point x="36.66666666666674" y="15.0" />
+    </edge>
+    <edge source="org.onton.PassengerInfoViewController" target="org.onton.Client">
+      <point x="99.0" y="-15.0" />
+      <point x="1491.155462184874" y="690.0" />
+      <point x="1957.4960162386633" y="690.0" />
+      <point x="-14.769230769230717" y="15.0" />
+    </edge>
+    <edge source="org.onton.AddAirportViewController" target="org.onton.Client">
+      <point x="-96.0" y="-15.0" />
+      <point x="3152.155462184874" y="580.0" />
+      <point x="2009.188323930971" y="580.0" />
+      <point x="36.923076923076906" y="15.0" />
+    </edge>
+    <edge source="org.onton.PassengerInfoViewController" target="org.onton.entity.User">
+      <point x="-33.0" y="-15.0" />
+      <point x="1359.155462184874" y="340.0" />
+      <point x="1498.369663016723" y="340.0" />
+      <point x="-10.0" y="15.0" />
+    </edge>
+    <edge source="org.onton.UsersDiagramController" target="org.onton.Client">
+      <point x="0.0" y="-15.0" />
+      <point x="2176.155462184874" y="620.0" />
+      <point x="1979.6498623925095" y="620.0" />
+      <point x="7.384615384615472" y="15.0" />
+    </edge>
+    <edge source="org.onton.UserMenuController" target="org.onton.entity.City">
+      <point x="-89.14285714285711" y="-15.0" />
+      <point x="179.39424137953665" y="710.0" />
+      <point x="0.0" y="710.0" />
+      <point x="0.0" y="50.0" />
+      <point x="2193.655462184874" y="50.0" />
+      <point x="-35.0" y="15.0" />
+    </edge>
+    <edge source="org.onton.AddCityViewController" target="org.onton.entity.City">
+      <point x="0.0" y="-15.0" />
+      <point x="3496.155462184874" y="710.0" />
+      <point x="3526.655462184874" y="710.0" />
+      <point x="3526.655462184874" y="60.0" />
+      <point x="2253.655462184874" y="60.0" />
+      <point x="25.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.30000000000000016" x="1863.666666666667" y="586.333333333333" />
   <SelectedNodes>
-    <node>org.onton.entity.City</node>
+    <node>org.onton.Client</node>
   </SelectedNodes>
   <Categories />
   <SCOPE>All</SCOPE>

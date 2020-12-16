@@ -114,26 +114,6 @@
       </AnchorPane>
       <StackPane layoutX="146.0" prefHeight="644.0" prefWidth="783.0">
          <children>
-            <Pane fx:id="airportsPane" prefHeight="603.0" prefWidth="771.0" style="-fx-background-image: url(&quot;https://image.freepik.com/free-photo/sky-cloud-clouds-background_121-69383.jpg&quot;); -fx-background-size: cover;">
-               <children>
-                  <TableView fx:id="airportTableView" layoutY="42.0" onMouseClicked="#airportTableRowSelected" prefHeight="560.0" prefWidth="783.0">
-                    <columns>
-                      <TableColumn fx:id="idAirportColumn" prefWidth="199.19998168945312" text="Идентификационный номер" />
-                      <TableColumn fx:id="airportNameColumn" prefWidth="367.2000427246094" text="Название аэропорта" />
-                        <TableColumn fx:id="airportCityColumn" prefWidth="214.4000244140625" text="Город" />
-                    </columns>
-                  </TableView>
-                  <Button layoutX="670.0" layoutY="607.0" mnemonicParsing="false" onAction="#switchToAddAirportView" prefHeight="30.0" prefWidth="91.0" style="-fx-background-color: none;" text="Добавить">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="removeAirportButton" layoutX="589.0" layoutY="607.0" mnemonicParsing="false" onAction="#removeAirportButtonPressed" prefHeight="30.0" prefWidth="81.0" style="-fx-background-color: none;" text="Удалить">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Button>
-               </children></Pane>
             <Pane fx:id="reportsPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-image: url(&quot;https://shen.ua/wp-content/uploads/2019/10/uborka-aeroportov-1.jpg&quot;) url(&quot;https://shen.ua/wp-content/uploads/2019/10/uborka-aeroportov-1.jpg&quot;); -fx-background-size: cover;">
                <children>
                   <AnchorPane layoutX="174.0" layoutY="175.0" prefHeight="295.0" prefWidth="435.0" style="-fx-background-color: #fff4be; -fx-background-radius: 50; -fx-border-color: black; -fx-border-radius: 50;">
@@ -488,6 +468,27 @@
                   </AnchorPane>
                </children>
             </Pane>
+            <Pane fx:id="airportsPane" prefHeight="603.0" prefWidth="771.0" style="-fx-background-image: url(&quot;https://image.freepik.com/free-photo/sky-cloud-clouds-background_121-69383.jpg&quot;); -fx-background-size: cover;">
+               <children>
+                  <TableView fx:id="airportTableView" layoutY="42.0" onMouseClicked="#airportTableRowSelected" prefHeight="560.0" prefWidth="783.0">
+                    <columns>
+                      <TableColumn fx:id="idAirportColumn" prefWidth="199.19998168945312" text="Идентификационный номер" />
+                      <TableColumn fx:id="airportNameColumn" prefWidth="367.2000427246094" text="Название аэропорта" />
+                        <TableColumn fx:id="airportCityColumn" prefWidth="214.4000244140625" text="Город" />
+                    </columns>
+                  </TableView>
+                  <Button layoutX="670.0" layoutY="607.0" mnemonicParsing="false" onAction="#switchToAddAirportView" prefHeight="30.0" prefWidth="91.0" style="-fx-background-color: none;" text="Добавить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="removeAirportButton" layoutX="589.0" layoutY="607.0" mnemonicParsing="false" onAction="#removeAirportButtonPressed" prefHeight="30.0" prefWidth="81.0" style="-fx-background-color: none;" text="Удалить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="451.0" layoutY="607.0" mnemonicParsing="false" onAction="#getReviewsReportDOCX" prefHeight="30.0" prefWidth="138.0" style="-fx-background-color: none;" text="Распечатать отзывы" />
+               </children></Pane>
          </children>
       </StackPane>
    </children>

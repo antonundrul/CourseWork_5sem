@@ -24,20 +24,11 @@ public class Server
                 t.start();
 
             }
-
-
-           /* clientAccepted = serverSocket.accept();//выполнение метода, который обеспечивает реальное подключение сервера к клиенту
-            System.out.println("connection established....");
-            sois = new ObjectInputStream(clientAccepted.getInputStream());//создание потока ввода
-            soos = new ObjectOutputStream(clientAccepted.getOutputStream());//создание потока вывода*/
              } catch (Exception e) {
                e.printStackTrace();
              } finally {
             print_log("server terminating....");
                 try {
-                    /*sois.close();//закрытие потока ввода
-                    soos.close();//закрытие потока вывода
-                    clientAccepted.close();//закрытие сокета, выделенного для клиента*/
                     serverSocket.close();//закрытие сокета сервера
                 } catch(Exception e) {
                     e.printStackTrace();//вызывается метод исключения е

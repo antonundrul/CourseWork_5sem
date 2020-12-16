@@ -662,6 +662,7 @@ public class ClientThread implements Runnable {
 
                 msg = "Операция проведена успешно";
                 outputStream.writeObject(msg);
+                outputStream.writeObject(user);
             }
 
 

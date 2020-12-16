@@ -322,6 +322,8 @@ public class UserMenuController implements Initializable {
 
             if(msg.equals("Операция проведена успешно")){
                 switchToPurchaseReceipt(event);
+                User user = (User) Client.cois.readObject();
+                Client.user = user;
             }else{
                 switchToPurchaseFailedView(event);
             }
